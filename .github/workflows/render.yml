@@ -210,19 +210,30 @@ jobs:
           # would slide every later sound effect off its element. So the audio is
           # rebuilt sample-accurately with atrim and re-encoded once.
 
-          : > splice/vlist.txt
+          # Video is spliced as a raw H.264 elementary stream, not through the
+          # concat demuxer. The demuxer offsets each piece by the previous
+          # piece's *container duration*, which rounds up to a whole frame and
+          # accumulated two extra frames (1511 -> 1513) on a three-piece join.
+          # Raw Annex-B carries no container timestamps, so timing is
+          # regenerated at a constant fps and the frame count is exactly the sum.
+          # The head is cut by frame count and the tail starts on a one-second
+          # keyframe, so both are exact by construction and still -c copy.
+          RAW=""
           if [ "$S" -gt 0 ]; then
-            ffmpeg -y -v error -i "$BASE" -t "$HEAD_END" -an -c:v copy splice/vhead.mp4
-            echo "file 'vhead.mp4'" >> splice/vlist.txt
+            ffmpeg -y -v error -i "$BASE" -frames:v "$S" -an -c:v copy \
+              -bsf:v h264_mp4toannexb -f h264 splice/vhead.h264
+            RAW="$RAW splice/vhead.h264"
           fi
-          ffmpeg -y -v error -i out/${{ steps.plan.outputs.name }}.mp4 -an -c:v copy splice/vmid.mp4
-          echo "file 'vmid.mp4'" >> splice/vlist.txt
+          ffmpeg -y -v error -i out/${{ steps.plan.outputs.name }}.mp4 -an -c:v copy \
+            -bsf:v h264_mp4toannexb -f h264 splice/vmid.h264
+          RAW="$RAW splice/vmid.h264"
           if [ "$HAS_TAIL" = "1" ]; then
-            ffmpeg -y -v error -ss "$TAIL_START" -i "$BASE" -an -c:v copy splice/vtail.mp4
-            echo "file 'vtail.mp4'" >> splice/vlist.txt
+            ffmpeg -y -v error -ss "$TAIL_START" -i "$BASE" -an -c:v copy \
+              -bsf:v h264_mp4toannexb -f h264 splice/vtail.h264
+            RAW="$RAW splice/vtail.h264"
           fi
-          cat splice/vlist.txt
-          ffmpeg -y -v error -f concat -safe 0 -i splice/vlist.txt -c copy splice/video.mp4
+          echo "raw pieces:$RAW"
+          cat $RAW > splice/all.h264
 
           # Sample-accurate audio: base[0..S] + new range + base[E+1..end]
           FILTER="[0:a]asplit=2[ah][at];"
@@ -247,8 +258,8 @@ jobs:
           ffmpeg -y -v error -i "$BASE" -i out/${{ steps.plan.outputs.name }}.mp4 \
             -filter_complex "$FILTER" -map "[aout]" -c:a aac -b:a 320k splice/audio.m4a
 
-          ffmpeg -y -v error -i splice/video.mp4 -i splice/audio.m4a \
-            -c copy -movflags +faststart out/${{ inputs.composition }}_spliced.mp4
+          ffmpeg -y -v error -fflags +genpts -r "$FPS" -i splice/all.h264 -i splice/audio.m4a \
+            -c:v copy -c:a copy -movflags +faststart out/${{ inputs.composition }}_spliced.mp4
 
           # The spliced file must be exactly as long as the base, frame for frame.
           BF=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$BASE")
