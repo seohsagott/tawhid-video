@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""
+Port of tawhid-kit/sfx3.py event generation -> src/data/sfxEvents.json.
+
+Identical to sfx3.py: the event list, the shot-transition cues, the IMG mapping,
+the sort, the 0.14 s minimum gap (which `foot` bypasses but still updates), the
+per-bank dB gains, and the `random.Random(5)` file-choice stream.
+
+Two documented deviations, both forced by the standards:
+
+  1. sfx3.py synthesises `water`/`wind`/`flutter` with numpy for cup/wind/bird.
+     Production standards v2 §10 rejects programmatically synthesised SFX and
+     v2 §6 limits SFX to the five Kenney CC0 packs, which contain no water,
+     wind or wingbeat. Remapped to the nearest non-tonal Kenney sample:
+         cup  -> soft   (impact_soft_medium)
+         wind -> cloth  (fabric swish = moving paper)
+         bird -> cloth  (wingbeat = fabric flutter)
+  2. Bank membership differs where sfx3.py's globs caught tonal samples that
+     v2 §3 forbids ("no bells, no chimes, no tones"): the `switch` bank is the
+     mechanical Kenney UI-Audio relay switches only, not the tonal Interface
+     `switch_00x` blips, and sfx3.py's arbitrary `[:12]` truncation is dropped.
+     Event times, gains and element mapping are unchanged; only which file of a
+     bank plays can differ.
+
+Run with:  python3 tools/resolve_sfx.py
+"""
+import json, os, random, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SFX = os.path.join(ROOT, "public", "sfx")
+DATA = os.path.join(ROOT, "src", "data")
+
+scenes = json.load(open(os.path.join(DATA, "scenes.json")))
+peaks = json.load(open(os.path.join(DATA, "sfxPeaks.json")))
+shots = scenes["shots"]
+END = scenes["meta"]["end"]
+
+# ---- banks, in a stable sorted order (sfx3.files() sorted by path) ----
+BANK = {}
+for bank in sorted(os.listdir(SFX)):
+    d = os.path.join(SFX, bank)
+    if os.path.isdir(d) and bank != "LICENSES":
+        BANK[bank] = sorted(f for f in os.listdir(d) if f.lower().endswith((".ogg", ".wav")))
+for k, v in BANK.items():
+    assert v, k
+
+# ---- verbatim from sfx3.py ----
+GAIN = {"page": -7, "place": -9, "cloth": -12, "switch": -8, "click": -13, "creak": -9,
+        "tick": -9, "stone": -15, "wood": -12, "metal": -15, "foot": -17, "scratch": -15,
+        "soft": -12,
+        # deviation 1: these three were synthesised in sfx3.py; gains carried over
+        "water": -8, "wind": -6, "flutter": -8}
+SUBST = {"water": "soft", "wind": "cloth", "flutter": "cloth"}
+
+IMG = {"book": ("page", "place"), "quran": ("page", "place"), "layers": ("page", "place"),
+       "pen": (None, "place"), "amulet": (None, "place"), "ring": (None, "place"),
+       "mirror": (None, "place"), "phones": (None, "place"), "puzzle": (None, "place"),
+       "lamp": ("switch", None), "lantern": ("switch", None), "moon": ("click", None),
+       "crown": ("click", None), "heart": ("click", None), "markyes": ("click", None),
+       "markno": ("wood", None),
+       "rope": ("creak", None), "clock": ("tick", None), "idols": ("stone", None),
+       "fence": ("wood", None), "chain": ("metal", None), "scale": ("metal", None),
+       "steps": ("foot", None),
+       "cup": ("water", None), "wind": ("wind", None), "bird": ("flutter", None),
+       "sprout": ("soft", None), "cloud": ("soft", None), "globe": ("soft", None)}
+
+ev = []
+for i, s in enumerate(shots):
+    if i > 0:
+        if s["trans"] == "push":
+            ev.append((s["st"] - 0.3, "cloth", -2))
+        elif s["trans"] == "wipe":
+            ev.append((s["st"] - 0.3, "page", -2))
+    for e in s["els"]:
+        k = e["k"]
+        if k == "img":
+            a, b = IMG.get(e["key"], ("cloth", None))
+            if a:
+                ev.append((e["t"], a, 0))
+            if b:
+                ev.append((e["t"] + 0.36, b, 0))
+        elif k in ("badge", "tiles"):
+            ev.append((e["t"], "click", 0))
+        elif k == "card":
+            ev.append((e["t"], "page", 0))
+            ev.append((e["th"], "scratch", 0))
+        elif k == "txt" and e.get("stroke"):
+            ev.append((e["t"] + e["dur"], "scratch", 0))
+        elif k == "walk":
+            for (t1, _), (t2, _) in zip(e["kt"], e["kt"][1:]):
+                for j in range(4):
+                    ev.append((t2 + 0.05 + j * 0.22, "foot", 0))
+
+ev.sort()
+
+rr = random.Random(5)
+last = {}
+out = []
+skipped = 0
+for t, name, g in ev:
+    if name != "foot" and t - last.get("any", -9) < 0.14:
+        skipped += 1
+        continue
+    bank = SUBST.get(name, name)
+    fn = rr.choice(BANK[bank])
+    key = f"{bank}/{fn}"
+    pk = peaks[key]["peak"] or 1.0
+    # sfx3.py: normalise to peak 1, then -12 dB, then bank gain + event gain
+    vol = (1.0 / pk) * 10 ** (-12 / 20) * 10 ** ((GAIN[name] + g) / 20)
+    out.append(dict(t=round(max(0.0, t), 4), bank=bank, file=fn, cue=name,
+                    vol=round(vol, 6), dur=peaks[key]["dur"]))
+    last["any"] = t
+
+dst = os.path.join(DATA, "sfxEvents.json")
+json.dump(dict(meta=dict(end=END, count=len(out), skipped=skipped,
+                         note="Generated by tools/resolve_sfx.py. Do not hand-edit."),
+               events=out), open(dst, "w"), separators=(",", ":"))
+print(f"events kept {len(out)}  skipped(<0.14s gap) {skipped}  of {len(ev)}")
+from collections import Counter
+for cue, n in Counter(e["cue"] for e in out).most_common():
+    sub = f" -> {SUBST[cue]}" if cue in SUBST else ""
+    print(f"   {cue:9s}{sub:9s} {n}")
+print("wrote", os.path.relpath(dst, ROOT), os.path.getsize(dst), "bytes")

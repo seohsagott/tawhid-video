@@ -1,0 +1,233 @@
+name: Render
+
+# Cloud export for a machine that cannot render locally.
+# Renders any Remotion composition to MP4 on Linux with the latest Remotion and
+# uploads the result as a downloadable artifact.
+#
+# Two modes:
+#   full   - render the whole composition
+#   range  - render only a frame range. With splice=true the range is spliced
+#            into a previously rendered full file, so a small fix does not cost
+#            a whole re-export. The splice is lossless: the base is given a
+#            keyframe every second, the range is snapped outward to those
+#            second boundaries, and the three pieces are joined with -c copy.
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: "Composition id (see src/Root.tsx)"
+        required: true
+        default: "Minute1"
+      mode:
+        description: "full = whole composition, range = frames only"
+        required: true
+        default: "full"
+        type: choice
+        options: [full, range]
+      start_frame:
+        description: "range mode: first frame (inclusive)"
+        required: false
+        default: ""
+      end_frame:
+        description: "range mode: last frame (inclusive)"
+        required: false
+        default: ""
+      splice:
+        description: "range mode: splice into a previous full render"
+        required: false
+        default: false
+        type: boolean
+      base_run_id:
+        description: "splice: run id of the Render run holding the base MP4"
+        required: false
+        default: ""
+      crf:
+        description: "Quality, lower is better (18 visually lossless, 23 default)"
+        required: false
+        default: "18"
+      remotion_version:
+        description: "Remotion version for this render ('latest' or e.g. 4.0.540)"
+        required: false
+        default: "latest"
+      props:
+        description: "Optional JSON passed to the composition as props"
+        required: false
+        default: ""
+
+concurrency:
+  group: render-${{ inputs.composition }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Chrome Headless Shell needs these on a bare Ubuntu runner.
+      - name: Install Chrome system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libnss3 libdbus-1-3 libatk1.0-0 libasound2t64 libxrandr2 \
+            libxkbcommon0 libxfixes3 libxcomposite1 libxdamage1 libgbm1 \
+            libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 fonts-liberation
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The repo is pinned to 4.0.429 because that is the newest compositor that
+      # loads on the author's macOS 12 machine. CI has no such limit, so it
+      # renders with the latest Remotion unless a version is given.
+      - name: Use requested Remotion version
+        run: |
+          V="${{ inputs.remotion_version }}"
+          echo "Requested Remotion: $V"
+          npm install --no-save \
+            "remotion@$V" "@remotion/cli@$V" "@remotion/renderer@$V" \
+            "@remotion/bundler@$V" "@remotion/fonts@$V" "@remotion/media-utils@$V"
+          node -e "console.log('rendering with remotion', require('remotion/package.json').version)"
+
+      - name: Ensure headless browser
+        run: npx remotion browser ensure
+
+      - name: Resolve render plan
+        id: plan
+        run: |
+          set -euo pipefail
+          MODE="${{ inputs.mode }}"
+          COMP="${{ inputs.composition }}"
+          FPS=$(node -e "
+            const s=require('./src/data/scenes.json');
+            console.log(s.meta.fps);
+          ")
+          echo "fps=$FPS" >> "$GITHUB_OUTPUT"
+
+          if [ "$MODE" = "range" ]; then
+            S="${{ inputs.start_frame }}"; E="${{ inputs.end_frame }}"
+            if [ -z "$S" ] || [ -z "$E" ]; then
+              echo "::error::range mode needs start_frame and end_frame"; exit 1
+            fi
+            if [ "${{ inputs.splice }}" = "true" ]; then
+              # Snap outward to whole seconds so the cut lands on keyframes.
+              S=$(( S / FPS * FPS ))
+              E=$(( ( E / FPS + 1 ) * FPS - 1 ))
+              echo "Snapped to keyframe boundaries: $S-$E"
+            fi
+            echo "frames=$S-$E" >> "$GITHUB_OUTPUT"
+            echo "start=$S" >> "$GITHUB_OUTPUT"
+            echo "end=$E" >> "$GITHUB_OUTPUT"
+            echo "name=${COMP}_${S}-${E}" >> "$GITHUB_OUTPUT"
+          else
+            echo "frames=" >> "$GITHUB_OUTPUT"
+            echo "name=${COMP}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Render
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          ARGS=(
+            "${{ inputs.composition }}"
+            "out/render.mp4"
+            "--codec=h264"
+            "--crf=${{ inputs.crf }}"
+            "--log=info"
+            "--timeout=180000"
+            "--concurrency=2"
+          )
+          if [ -n "${{ steps.plan.outputs.frames }}" ]; then
+            ARGS+=("--frames=${{ steps.plan.outputs.frames }}")
+          fi
+          if [ -n "${{ inputs.props }}" ]; then
+            printf '%s' '${{ inputs.props }}' > out/props.json
+            ARGS+=("--props=out/props.json")
+          fi
+          npx remotion render "${ARGS[@]}"
+
+      # Re-encode once with a keyframe every second. This is what makes a later
+      # -c copy splice exact; without it the cut points are wherever x264 chose.
+      - name: Normalise keyframes
+        run: |
+          set -euo pipefail
+          FPS=${{ steps.plan.outputs.fps }}
+          ffmpeg -y -v error -i out/render.mp4 \
+            -c:v libx264 -crf ${{ inputs.crf }} -preset medium \
+            -g "$FPS" -keyint_min "$FPS" -sc_threshold 0 \
+            -c:a copy -movflags +faststart \
+            out/${{ steps.plan.outputs.name }}.mp4
+          rm out/render.mp4
+          ls -la out
+
+      - name: Download base render for splice
+        if: ${{ inputs.mode == 'range' && inputs.splice }}
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ inputs.base_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: base
+          merge-multiple: true
+
+      - name: Splice range into base
+        if: ${{ inputs.mode == 'range' && inputs.splice }}
+        run: |
+          set -euo pipefail
+          FPS=${{ steps.plan.outputs.fps }}
+          S=${{ steps.plan.outputs.start }}
+          E=${{ steps.plan.outputs.end }}
+          BASE=$(find base -name '*.mp4' | head -1)
+          if [ -z "$BASE" ]; then echo "::error::no base mp4 in that run"; exit 1; fi
+          echo "Base: $BASE"
+
+          HEAD_END=$(node -e "console.log($S/$FPS)")
+          TAIL_START=$(node -e "console.log(($E+1)/$FPS)")
+
+          mkdir -p splice
+          : > splice/list.txt
+          # Head: everything before the range. Omitted when the range starts at 0.
+          if [ "$S" -gt 0 ]; then
+            ffmpeg -y -v error -i "$BASE" -t "$HEAD_END" -c copy splice/head.mp4
+            echo "file 'head.mp4'" >> splice/list.txt
+          fi
+          cp out/${{ steps.plan.outputs.name }}.mp4 splice/mid.mp4
+          echo "file 'mid.mp4'" >> splice/list.txt
+          # Tail: everything after. Omitted when the range runs to the end.
+          DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$BASE")
+          if node -e "process.exit($TAIL_START < $DUR - 0.001 ? 0 : 1)"; then
+            ffmpeg -y -v error -ss "$TAIL_START" -i "$BASE" -c copy splice/tail.mp4
+            echo "file 'tail.mp4'" >> splice/list.txt
+          fi
+
+          cat splice/list.txt
+          ffmpeg -y -v error -f concat -safe 0 -i splice/list.txt -c copy \
+            out/${{ inputs.composition }}_spliced.mp4
+          ls -la out
+
+      - name: Report
+        run: |
+          echo "### Render complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| file | size | duration |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          for f in out/*.mp4; do
+            D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+            S=$(du -h "$f" | cut -f1)
+            echo "| \`$(basename "$f")\` | $S | ${D}s |" >> $GITHUB_STEP_SUMMARY
+          done
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Run id for splicing later: \`${{ github.run_id }}\`" >> $GITHUB_STEP_SUMMARY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.plan.outputs.name }}
+          path: out/*.mp4
+          retention-days: 30
+          compression-level: 0
