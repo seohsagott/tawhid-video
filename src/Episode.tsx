@@ -1,50 +1,70 @@
 /**
- * The episode composition.
+ * The episode composition, driven by a project file.
  *
- * Timebase: the export runs at 24 fps (v2 §6) but the animation is stepped on
- * twos so it reads as twelve frames a second — the stop-motion character the
- * standards ask for. `n12` is therefore floor(absoluteFrame / 2) and the time
- * handed to every ported function is n12 / 12, which is exactly the `t` that
- * render3.frame3(n) used.
+ * Timebase: export runs at project fps (24, v2 §6) but the animation is
+ * stepped on twos so it reads as twelve frames a second. `n12` is
+ * floor(absoluteFrame / 2) and the time handed to every ported function is
+ * n12 / 12 — exactly the `t` that render3.frame3(n) used.
  */
-import React from "react";
+import React, { useMemo } from "react";
 import { AbsoluteFill, Audio, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { FPS12, H, W } from "./engine/constants";
-import type { Scenes } from "./engine/types";
+import { makeDucker } from "./engine/duck";
+import { resolveProject, resolveSfx } from "./engine/resolve";
+import type { Project } from "./schema/project";
+import { wordsFor } from "./projects";
 import { FontGate } from "./components/FontGate";
 import { Frame } from "./components/Shot";
 import { SfxTrack } from "./components/Sfx";
-import scenesData from "./data/scenes.json";
+import { StudioSave } from "./components/StudioSave";
 
-const scenes = scenesData as unknown as Scenes;
-
-export type EpisodeProps = {
-  /** episode time, in seconds, that this composition starts at */
-  from: number;
-  /** episode time, in seconds, that it ends at */
-  to: number;
+export type EpisodeProps = Project & {
+  /** optional end, in episode seconds (used by the first-chapter composition) */
+  to?: number;
 };
 
-export const Episode: React.FC<EpisodeProps> = ({ from, to }) => {
+export const Episode: React.FC<EpisodeProps> = (props) => {
+  const { to, ...project } = props;
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const absFrame = Math.round(from * fps) + frame;
-  const n12 = Math.floor(absFrame / 2);
-  const t = n12 / FPS12;
+  const words = wordsFor(project.id);
+  const scenes = useMemo(() => resolveProject(project, words), [project, words]);
+  const sfx = useMemo(() => resolveSfx(scenes), [scenes]);
+  const duck = useMemo(() => makeDucker(words), [words]);
 
-  const shots = scenes.shots.filter((s) => s.en > from - 1 && s.st < to + 1);
+  const end = to ?? scenes.meta.end;
+  const n12 = Math.floor(frame / 2);
+  const t = n12 / FPS12;
+  const shots = scenes.shots.filter((s) => s.st < end + 1);
 
   return (
     <AbsoluteFill style={{ width: W, height: H, backgroundColor: "#E4DBD0", overflow: "hidden" }}>
       <FontGate>
         <Frame shots={shots} t={t} n12={n12} />
       </FontGate>
-      <Audio
-        src={staticFile("audio/ep0_voice_joined.flac")}
-        startFrom={Math.round(from * fps)}
-      />
-      <SfxTrack fps={fps} from={from} to={to} />
+      <Audio src={staticFile(project.audio)} />
+      <SfxTrack events={sfx} duck={duck} fps={fps} from={0} to={end} />
+      <StudioSave project={project} />
     </AbsoluteFill>
   );
 };
+
+/** First chapter only (shots 0-5, "Why did Allah create us?") — ends on the shot boundary. */
+export const FirstChapter: React.FC<Project> = (project) => {
+  const scenes = useMemo(() => resolveProject(project, wordsFor(project.id)), [project]);
+  return <Episode {...project} to={scenes.shots[6].st} />;
+};
+
+/**
+ * Half-resolution preview for a weak machine: the same composition drawn into
+ * a 960x540 canvas. Everything scales through one CSS transform, so images are
+ * painted at a quarter of the pixels. Never used for export.
+ */
+export const PreviewHalf: React.FC<Project> = (project) => (
+  <AbsoluteFill style={{ width: W / 2, height: H / 2, overflow: "hidden" }}>
+    <div style={{ width: W, height: H, transform: "scale(0.5)", transformOrigin: "top left", position: "absolute" }}>
+      <Episode {...project} />
+    </div>
+  </AbsoluteFill>
+);

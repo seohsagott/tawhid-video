@@ -1,0 +1,13 @@
+{
+  "id": "tawhid",
+  "name": "The Islamic Upbringing — Kitab at-Tawhid series",
+  "palette": { "slate": "#5B6470", "rose": "#B9797A", "sage": "#60805A", "muted": "#8C827A", "gold": "#B9913F", "paper": "#E4DBD0", "card": "#FBF8F1" },
+  "fonts": {
+    "latin": { "family": "TawhidMontserrat", "file": "fonts/Montserrat.ttf", "license": "OFL" },
+    "arabic": { "family": "TawhidAmiri", "file": "fonts/Amiri-Regular.ttf", "license": "OFL" },
+    "quran": { "family": "TawhidAmiriQuran", "file": "fonts/AmiriQuran-Regular.ttf", "license": "OFL" }
+  },
+  "elements": "el/",
+  "sfx": { "source": "Kenney CC0", "root": "sfx/", "banks": ["page","place","cloth","switch","click","creak","tick","stone","wood","metal","foot","scratch","soft"], "duckDb": -6 },
+  "rules": { "music": false, "arabicRecitation": false, "facesInImages": false, "standards": ["Tawhid-Series-Standards-v3.md", "Tawhid-Production-Standards-v2.md"] }
+}

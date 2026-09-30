@@ -10,7 +10,6 @@
  * the effects disappear, and the release is slow enough not to pump between
  * words inside a sentence.
  */
-import words from "../data/words.json";
 
 /** Ducked level while the narrator is speaking. */
 const DUCK_DB = -6;
@@ -22,8 +21,9 @@ const MERGE_GAP = 0.12;
 
 type Iv = [number, number];
 
-const buildIntervals = (): Iv[] => {
-  const w = words as [string, number, number][];
+export type Words = [string, number, number][];
+
+const buildIntervals = (w: Words): Iv[] => {
   const out: Iv[] = [];
   for (const [, a, b] of w) {
     const last = out[out.length - 1];
@@ -33,10 +33,8 @@ const buildIntervals = (): Iv[] => {
   return out;
 };
 
-const IV = buildIntervals();
-
 /** Index of the last interval starting at or before t, or -1. */
-const findAtOrBefore = (t: number): number => {
+const findAtOrBefore = (IV: Iv[], t: number): number => {
   let lo = 0;
   let hi = IV.length - 1;
   let ans = -1;
@@ -50,9 +48,11 @@ const findAtOrBefore = (t: number): number => {
   return ans;
 };
 
-/** Linear gain multiplier for the effects bed at absolute time `t`. */
-export const duckAt = (t: number): number => {
-  const i = findAtOrBefore(t);
+/** Build a ducking function for one narration: linear gain for the effects bed at absolute time `t`. */
+export const makeDucker = (words: Words): ((t: number) => number) => {
+  const IV = buildIntervals(words);
+  return (t: number): number => {
+  const i = findAtOrBefore(IV, t);
   if (i < 0) return 1;
   const [a, b] = IV[i];
   if (t <= b) {
@@ -61,6 +61,5 @@ export const duckAt = (t: number): number => {
   }
   const r = Math.min(1, (t - b) / RELEASE);
   return DUCK + (1 - DUCK) * r;
+  };
 };
-
-export const speechIntervalCount = IV.length;

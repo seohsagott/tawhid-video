@@ -1,0 +1,6173 @@
+{
+ "id": "tawhid-ep0",
+ "title": "Kitab at-Tawhid — Episode 0 (Introduction)",
+ "brand": "tawhid",
+ "template": "youtube-16x9",
+ "fps": 24,
+ "width": 1920,
+ "height": 1080,
+ "audio": "audio/ep0_voice_joined.flac",
+ "wordsFile": "projects/tawhid-ep0/words.json",
+ "tailSeconds": 2.5,
+ "shots": [
+  {
+   "anchor": "",
+   "els": [
+    {
+     "k": "img",
+     "key": "moon",
+     "box": [
+      1290,
+      80,
+      420,
+      380
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "img",
+     "key": "flowers",
+     "box": [
+      420,
+      770,
+      1080,
+      250
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "ar",
+     "txt": "بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ",
+     "x": 860,
+     "y": 300,
+     "size": 118,
+     "col": "#B9797A",
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Bismillahir-Rahmanir-Rahim",
+     "x": 860,
+     "y": 560,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.6
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Why did Allah create",
+   "els": [
+    {
+     "k": "img",
+     "key": "childlook",
+     "box": [
+      150,
+      140,
+      560,
+      860
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "moon",
+     "box": [
+      1400,
+      60,
+      360,
+      330
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.6
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Why did Allah\ncreate us?",
+     "x": 800,
+     "y": 430,
+     "size": 84,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The answer to this question",
+   "els": [
+    {
+     "k": "img",
+     "key": "quran",
+     "box": [
+      110,
+      190,
+      1000,
+      700
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "The answer is in",
+     "x": 1180,
+     "y": 330,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "one verse",
+     "x": 1180,
+     "y": 400,
+     "size": 88,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "single verse",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Surat adh-Dhariyat",
+     "x": 1180,
+     "y": 540,
+     "size": 36,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "says in",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The meaning of the verse",
+   "els": [
+    {
+     "k": "card",
+     "ar": "﴿وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ﴾",
+     "en": "“I have only created Jinns and men, that they may serve Me.”",
+     "ref": "Adh-Dhariyat 51:56",
+     "x": 100,
+     "y": 230,
+     "w": 1060,
+     "hl": "that they may serve Me.”",
+     "hlAt": {
+      "phrase": "they may serve",
+      "offset": 0
+     },
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "worship",
+     "box": [
+      1240,
+      300,
+      600,
+      400
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.5
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "to worship Allah",
+     "x": 1540,
+     "y": 760,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "they may serve",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "In the book",
+   "els": [
+    {
+     "k": "img",
+     "key": "scholar",
+     "box": [
+      120,
+      120,
+      700,
+      860
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Fath al-Majid",
+     "x": 1000,
+     "y": 190,
+     "size": 64,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the book that explains the book",
+     "x": 1000,
+     "y": 290,
+     "size": 32,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    },
+    {
+     "k": "img",
+     "key": "lamp",
+     "box": [
+      1190,
+      370,
+      300,
+      360
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "The verse means",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Why do we exist?",
+     "x": 1340,
+     "y": 760,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "The verse means",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "to worship Allah",
+     "x": 1340,
+     "y": 815,
+     "size": 54,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "worship Him",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the wisdom behind our creation",
+     "x": 1340,
+     "y": 900,
+     "size": 28,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "wisdom behind",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "With this verse",
+   "els": [
+    {
+     "k": "img",
+     "key": "book",
+     "box": [
+      110,
+      210,
+      820,
+      560
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Kitab at-Tawhid",
+     "x": 520,
+     "y": 810,
+     "size": 60,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.6
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "written by",
+     "x": 1040,
+     "y": 200,
+     "size": 30,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Imam Muhammad\nibn Abd al-Wahhab",
+     "x": 1040,
+     "y": 250,
+     "size": 50,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "he opened his book with this verse",
+     "x": 1040,
+     "y": 410,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "opened his book",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "pen",
+     "box": [
+      1060,
+      500,
+      560,
+      300
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "opened his book",
+      "offset": 0
+     }
+    },
+    {
+     "k": "tiles",
+     "labels": [
+      "1",
+      "2",
+      "3",
+      "…",
+      "66"
+     ],
+     "x": 1320,
+     "y": 790,
+     "at": {
+      "phrase": "chapter by chapter",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "chapter by chapter",
+     "x": 1320,
+     "y": 985,
+     "size": 36,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "chapter by chapter",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "In this introductory episode",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "5 stops in this episode",
+     "x": 960,
+     "y": 70,
+     "size": 60,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      165,
+      170,
+      190,
+      270
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "First",
+      "offset": 0
+     }
+    },
+    {
+     "k": "badge",
+     "n": "1",
+     "x": 260,
+     "y": 480,
+     "at": {
+      "phrase": "First",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "What is Tawhid?\nWhat is Taghut?",
+     "x": 260,
+     "y": 540,
+     "size": 31,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "First",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      505,
+      170,
+      190,
+      270
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "Second",
+      "offset": 0
+     }
+    },
+    {
+     "k": "badge",
+     "n": "2",
+     "x": 600,
+     "y": 480,
+     "at": {
+      "phrase": "Second",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "The book\nand its author",
+     "x": 600,
+     "y": 540,
+     "size": 31,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "Second",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      845,
+      170,
+      190,
+      270
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "Third",
+      "offset": 0
+     }
+    },
+    {
+     "k": "badge",
+     "n": "3",
+     "x": 940,
+     "y": 480,
+     "at": {
+      "phrase": "Third",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Its chapters",
+     "x": 940,
+     "y": 540,
+     "size": 31,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "Third",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      1185,
+      170,
+      190,
+      270
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "Fourth",
+      "offset": 0
+     }
+    },
+    {
+     "k": "badge",
+     "n": "4",
+     "x": 1280,
+     "y": 480,
+     "at": {
+      "phrase": "Fourth",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Who is it for?",
+     "x": 1280,
+     "y": 540,
+     "size": 31,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "Fourth",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      1525,
+      170,
+      190,
+      270
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "Fifth",
+      "offset": 0
+     }
+    },
+    {
+     "k": "badge",
+     "n": "5",
+     "x": 1620,
+     "y": 480,
+     "at": {
+      "phrase": "Fifth",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Our sources",
+     "x": 1620,
+     "y": 540,
+     "size": 31,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "Fifth",
+      "offset": 0
+     }
+    },
+    {
+     "k": "walk",
+     "y": 660,
+     "h": 330,
+     "keys": [
+      {
+       "at": {
+        "phrase": "First",
+        "offset": 0
+       },
+       "x": 260
+      },
+      {
+       "at": {
+        "phrase": "Second",
+        "offset": 0
+       },
+       "x": 600
+      },
+      {
+       "at": {
+        "phrase": "Third",
+        "offset": 0
+       },
+       "x": 940
+      },
+      {
+       "at": {
+        "phrase": "Fourth",
+        "offset": 0
+       },
+       "x": 1280
+      },
+      {
+       "at": {
+        "phrase": "Fifth",
+        "offset": 0
+       },
+       "x": 1620
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "anchor": "is the message with which",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "One message for all the messengers",
+     "x": 960,
+     "y": 140,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "img",
+     "key": "villages",
+     "box": [
+      360,
+      360,
+      1200,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The meaning of the verse",
+   "els": [
+    {
+     "k": "card",
+     "ar": "﴿وَلَقَدْ بَعَثْنَا فِي كُلِّ أُمَّةٍ رَّسُولًا أَنِ اعْبُدُوا اللَّهَ وَاجْتَنِبُوا الطَّاغُوتَ﴾",
+     "en": "“For we assuredly sent amongst every people an apostle, (with the command), serve Allah, and eschew Taghut.”",
+     "ref": "An-Nahl 16:36",
+     "x": 100,
+     "y": 170,
+     "w": 1060,
+     "hl": "serve Allah, and eschew Taghut.”",
+     "hlAt": {
+      "phrase": "serve Allah",
+      "offset": 0
+     },
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "villages",
+     "box": [
+      1230,
+      330,
+      620,
+      320
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Taghut",
+     "x": 1540,
+     "y": 720,
+     "size": 60,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "is an Arabic word",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "explained shortly",
+     "x": 1540,
+     "y": 825,
+     "size": 28,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "is an Arabic word",
+      "offset": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Explaining this verse",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Worship Allah alone",
+     "x": 960,
+     "y": 190,
+     "size": 62,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "worship Allah",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "and leave the worship of anything else",
+     "x": 960,
+     "y": 300,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "do not worship",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "= La ilaha illa Allah",
+     "x": 960,
+     "y": 420,
+     "size": 56,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "that is the meaning",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the religion of all the prophets",
+     "x": 960,
+     "y": 600,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "religion of all",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "even if their laws differ",
+     "x": 960,
+     "y": 670,
+     "size": 30,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "codes or laws",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      880,
+      740,
+      160,
+      250
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "religion of all",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "This statement contains two things",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Two parts, together",
+     "x": 960,
+     "y": 100,
+     "size": 56,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      330,
+      260,
+      360,
+      360
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "negation",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "La ilaha",
+     "x": 510,
+     "y": 670,
+     "size": 64,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "negation",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "no god",
+     "x": 510,
+     "y": 790,
+     "size": 34,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "negation",
+      "offset": 0.6
+     }
+    },
+    {
+     "k": "img",
+     "key": "markyes",
+     "box": [
+      1230,
+      260,
+      360,
+      360
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "affirmation",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "illa Allah",
+     "x": 1410,
+     "y": 670,
+     "size": 64,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "affirmation",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "but Allah",
+     "x": 1410,
+     "y": 790,
+     "size": 34,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "affirmation",
+      "offset": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "absolute negation",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Ibn al-Qayyim",
+     "x": 960,
+     "y": 140,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Negation alone: not Tawhid",
+     "x": 960,
+     "y": 320,
+     "size": 46,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Affirmation alone: not Tawhid",
+     "x": 960,
+     "y": 420,
+     "size": 46,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "neither is affirmation",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Both together: Tawhid",
+     "x": 960,
+     "y": 560,
+     "size": 58,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "includes negation",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markyes",
+     "box": [
+      860,
+      690,
+      200,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "includes negation",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "So it is not enough",
+   "els": [
+    {
+     "k": "img",
+     "key": "childlook",
+     "box": [
+      140,
+      170,
+      460,
+      820
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "“I worship Allah”",
+     "x": 760,
+     "y": 260,
+     "size": 60,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "is not enough",
+     "x": 760,
+     "y": 350,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.9
+     }
+    },
+    {
+     "k": "img",
+     "key": "idols",
+     "box": [
+      760,
+      470,
+      420,
+      380
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "leave the worship",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      1230,
+      520,
+      280,
+      280
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "leave the worship",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "leave the worship of all else",
+     "x": 760,
+     "y": 900,
+     "size": 36,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "leave the worship",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "is two types",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Tawhid: two types",
+     "x": 960,
+     "y": 90,
+     "size": 60,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "book",
+     "box": [
+      250,
+      240,
+      560,
+      380
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "knowledge and proof",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "1 · Knowing Allah",
+     "x": 530,
+     "y": 680,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "knowledge and proof",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Lordship · Names · Attributes",
+     "x": 530,
+     "y": 760,
+     "size": 28,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "knowledge and proof",
+      "offset": 1
+     }
+    },
+    {
+     "k": "img",
+     "key": "worship",
+     "box": [
+      1110,
+      240,
+      600,
+      380
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "demand and goal",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "2 · Worshipping Allah alone",
+     "x": 1410,
+     "y": 680,
+     "size": 40,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "demand and goal",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Divinity · Worship",
+     "x": 1410,
+     "y": 760,
+     "size": 28,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "demand and goal",
+      "offset": 1
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The first type is",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "1 · Knowing Allah",
+     "x": 960,
+     "y": 90,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "sprout",
+     "box": [
+      220,
+      250,
+      420,
+      400
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "the Creator",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "The Creator",
+     "x": 430,
+     "y": 690,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "the Creator",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "cloud",
+     "box": [
+      750,
+      250,
+      420,
+      400
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "the Provider",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "The Provider",
+     "x": 960,
+     "y": 690,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "the Provider",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "He gives life\nand causes death",
+     "x": 1500,
+     "y": 420,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "gives life",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "what He described Himself",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "His Names and Attributes",
+     "x": 960,
+     "y": 100,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "quran",
+     "box": [
+      620,
+      200,
+      680,
+      480
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "as Allah described Himself",
+     "x": 960,
+     "y": 730,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "and as His Messenger ﷺ described Him",
+     "x": 960,
+     "y": 800,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "His Messenger",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "what all the people",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The way of Ahl as-Sunnah",
+     "x": 960,
+     "y": 120,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markyes",
+     "box": [
+      330,
+      290,
+      300,
+      300
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "affirming without",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Affirm",
+     "x": 480,
+     "y": 640,
+     "size": 48,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "affirming without",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "without likening",
+     "x": 480,
+     "y": 715,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "likening",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      1290,
+      290,
+      300,
+      300
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "without negating",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Exalt",
+     "x": 1440,
+     "y": 640,
+     "size": 48,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "without negating",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "without denying",
+     "x": 1440,
+     "y": 715,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "without negating",
+      "offset": 0.5
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The meaning of the verse",
+   "els": [
+    {
+     "k": "card",
+     "ar": "﴿لَيْسَ كَمِثْلِهِ شَيْءٌ وَهُوَ السَّمِيعُ الْبَصِيرُ﴾",
+     "en": "“There is nothing whatever like unto Him and He is the One that hears and sees (all things)”",
+     "ref": "Ash-Shura 42:11",
+     "x": 260,
+     "y": 230,
+     "w": 1400,
+     "hl": "“There is nothing whatever like unto Him",
+     "hlAt": {
+      "phrase": "nothing whatever",
+      "offset": 0
+     },
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "That is: we affirm",
+   "els": [
+    {
+     "k": "img",
+     "key": "markyes",
+     "box": [
+      380,
+      270,
+      180,
+      180
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "We affirm what He affirmed",
+     "x": 640,
+     "y": 330,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      380,
+      500,
+      180,
+      180
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "do not liken",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "We do not liken Him to creation",
+     "x": 640,
+     "y": 560,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "do not liken",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      380,
+      730,
+      180,
+      180
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "do not deny",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "We do not deny any of it",
+     "x": 640,
+     "y": 790,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "do not deny",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "abundantly clear",
+   "els": [
+    {
+     "k": "img",
+     "key": "quran",
+     "box": [
+      110,
+      200,
+      820,
+      620
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Surat al-Ikhlas",
+     "x": 1030,
+     "y": 260,
+     "size": 60,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "no command · no prohibition",
+     "x": 1030,
+     "y": 400,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "no command",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "It tells us who Allah is",
+     "x": 1030,
+     "y": 500,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "tells us who Allah is",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "And the more a servant",
+   "els": [
+    {
+     "k": "img",
+     "key": "heart",
+     "box": [
+      140,
+      250,
+      640,
+      560
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Know Him more",
+     "x": 900,
+     "y": 260,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "knows his Lord",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "love Him more",
+     "x": 900,
+     "y": 380,
+     "size": 48,
+     "col": "#B9797A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "loves Him",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "fear Him more",
+     "x": 900,
+     "y": 500,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "fears Him",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "worship Him more",
+     "x": 900,
+     "y": 620,
+     "size": 56,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "worships Him",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The second type is Tawhid in demand",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "2 · Worshipping Allah alone",
+     "x": 960,
+     "y": 90,
+     "size": 52,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "worship",
+     "box": [
+      140,
+      220,
+      700,
+      440
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Prayer: for Allah alone",
+     "x": 960,
+     "y": 280,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "do not pray",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "sheep",
+     "box": [
+      340,
+      700,
+      300,
+      230
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "do not sacrifice",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Sacrifice: for Allah alone",
+     "x": 960,
+     "y": 380,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "do not sacrifice",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Vows: for Allah alone",
+     "x": 960,
+     "y": 480,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "make a vow",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Surat al-Kafirun",
+     "x": 960,
+     "y": 650,
+     "size": 48,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "All of it is about worship",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "whom we worship · whom we do not",
+     "x": 960,
+     "y": 730,
+     "size": 32,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "All of it is about worship",
+      "offset": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "One of the most beautiful",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The difference",
+     "x": 960,
+     "y": 90,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "arrow",
+     "box": [
+      300,
+      230,
+      420,
+      380
+     ],
+     "rot": 180,
+     "at": {
+      "phrase": "from the Lord",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "From the Lord to the servant",
+     "x": 510,
+     "y": 690,
+     "size": 38,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "from the Lord",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "He creates · He provides",
+     "x": 510,
+     "y": 760,
+     "size": 30,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "from the Lord",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "img",
+     "key": "arrow",
+     "box": [
+      1200,
+      230,
+      420,
+      380
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "from the servant",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "From the servant to the Lord",
+     "x": 1410,
+     "y": 690,
+     "size": 38,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "from the servant",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "we worship Him",
+     "x": 1410,
+     "y": 760,
+     "size": 30,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "that is worship",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "You may hear some",
+   "els": [
+    {
+     "k": "img",
+     "key": "blocks",
+     "box": [
+      460,
+      190,
+      1000,
+      380
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Lordship",
+     "x": 600,
+     "y": 610,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "of Lordship",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Worship",
+     "x": 960,
+     "y": 610,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "of divinity",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Names & Attributes",
+     "x": 1340,
+     "y": 610,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "names and attributes",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Two or three: the same meaning",
+     "x": 960,
+     "y": 780,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "meaning is the same",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Here is an important point",
+   "els": [
+    {
+     "k": "img",
+     "key": "sprout",
+     "box": [
+      180,
+      250,
+      560,
+      560
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Tawhid is not only",
+     "x": 940,
+     "y": 300,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "“Allah is the Creator”",
+     "x": 940,
+     "y": 380,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "Lordship only",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Why? He says",
+   "els": [
+    {
+     "k": "img",
+     "key": "idols",
+     "box": [
+      140,
+      300,
+      700,
+      520
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "They said: Allah is the Creator",
+     "x": 920,
+     "y": 300,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "acknowledged",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "…yet they worshipped others",
+     "x": 920,
+     "y": 390,
+     "size": 46,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "yet, they were",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The meaning of the verse",
+   "els": [
+    {
+     "k": "card",
+     "ar": "﴿وَمَا يُؤْمِنُ أَكْثَرُهُم بِاللَّهِ إِلَّا وَهُم مُّشْرِكُونَ﴾",
+     "en": "“And most of them believe not in Allah without associating (others as partners) with Him!”",
+     "ref": "Yusuf 12:106",
+     "x": 100,
+     "y": 230,
+     "w": 1060,
+     "hl": "without associating (others as partners) with Him!”",
+     "hlAt": {
+      "phrase": "without associating",
+      "offset": 0
+     },
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "idols",
+     "box": [
+      1260,
+      340,
+      560,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "then says",
+   "els": [
+    {
+     "k": "img",
+     "key": "globe",
+     "box": [
+      150,
+      240,
+      620,
+      620
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "“Who created the heavens and the earth?”",
+     "x": 880,
+     "y": 280,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 900,
+     "at": {
+      "phrase": "who is it that",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "“Allah.”",
+     "x": 880,
+     "y": 440,
+     "size": 56,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "They say, Allah",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "…yet they worship another",
+     "x": 880,
+     "y": 540,
+     "size": 46,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "however",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "So the dispute between",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The dispute was over worship",
+     "x": 960,
+     "y": 160,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Shirk",
+     "x": 960,
+     "y": 370,
+     "size": 110,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "is called",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "associating partners with Allah",
+     "x": 960,
+     "y": 575,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "associating partners",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "if Allah is the One",
+   "els": [
+    {
+     "k": "img",
+     "key": "sprout",
+     "box": [
+      240,
+      230,
+      420,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "He created you:",
+     "x": 450,
+     "y": 700,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "why worship others?",
+     "x": 450,
+     "y": 770,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    },
+    {
+     "k": "img",
+     "key": "cloud",
+     "box": [
+      1260,
+      230,
+      420,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "if He is the Provider",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "He provides for you:",
+     "x": 1470,
+     "y": 700,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "if He is the Provider",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "why ask others?",
+     "x": 1470,
+     "y": 770,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "if He is the Provider",
+      "offset": 1
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "That is why Sheikh",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Sheikh al-Islam Ibn Taymiyyah",
+     "x": 960,
+     "y": 110,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Knowing His names and attributes",
+     "x": 960,
+     "y": 280,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "acknowledges the names",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "and that He is the Creator",
+     "x": 960,
+     "y": 360,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "Creator of everything",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "is not enough",
+     "x": 960,
+     "y": 450,
+     "size": 52,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "would not be considered",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Worship Allah alone",
+     "x": 960,
+     "y": 600,
+     "size": 60,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "who deserves to be",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      880,
+      700,
+      160,
+      260
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "who deserves to be",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "And this type",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The subject of Kitab at-Tawhid",
+     "x": 960,
+     "y": 110,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "book",
+     "box": [
+      560,
+      230,
+      800,
+      520
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the Tawhid of worship",
+     "x": 960,
+     "y": 820,
+     "size": 56,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "We heard in the meaning",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Serve Allah",
+     "x": 520,
+     "y": 300,
+     "size": 64,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "img",
+     "key": "markyes",
+     "box": [
+      420,
+      420,
+      200,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Eschew Taghut",
+     "x": 1400,
+     "y": 300,
+     "size": 64,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "eschew",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      1300,
+      420,
+      200,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "eschew",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "both are required",
+     "x": 960,
+     "y": 760,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "two things are required",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The most important and greatest",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The great issue at the opening of the book",
+     "x": 960,
+     "y": 130,
+     "size": 34,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Worship of Allah happens only",
+     "x": 960,
+     "y": 280,
+     "size": 50,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "by rejecting Taghut",
+     "x": 960,
+     "y": 370,
+     "size": 50,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "rejecting",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "rope",
+     "box": [
+      710,
+      500,
+      500,
+      380
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "mentioned this verse",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The meaning of the verse",
+   "els": [
+    {
+     "k": "card",
+     "ar": "﴿فَمَن يَكْفُرْ بِالطَّاغُوتِ وَيُؤْمِن بِاللَّهِ فَقَدِ اسْتَمْسَكَ بِالْعُرْوَةِ الْوُثْقَىٰ﴾",
+     "en": "“Whoever rejects Taghut and believes in Allah hath grasped the most trustworthy Hand-Hold”",
+     "ref": "Al-Baqarah 2:256",
+     "x": 100,
+     "y": 210,
+     "w": 1060,
+     "hl": "the most trustworthy Hand-Hold”",
+     "hlAt": {
+      "phrase": "most trustworthy",
+      "offset": 0
+     },
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "rope",
+     "box": [
+      1250,
+      330,
+      600,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "So what is Taghut",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "What is Taghut?",
+     "x": 960,
+     "y": 450,
+     "size": 110,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "is derived from",
+   "els": [
+    {
+     "k": "img",
+     "key": "cup",
+     "box": [
+      170,
+      190,
+      560,
+      720
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Tughyan",
+     "x": 900,
+     "y": 300,
+     "size": 90,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "exceeding the limit",
+     "x": 900,
+     "y": 440,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "exceeding the limit",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "fence",
+     "box": [
+      900,
+      580,
+      720,
+      330
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "exceeding the limit",
+      "offset": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Then he quoted examples",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Examples from the early generations",
+     "x": 960,
+     "y": 110,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Umar ibn al-Khattab: the Shaytan",
+     "x": 960,
+     "y": 320,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.5
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Jabir: soothsayers",
+     "x": 960,
+     "y": 440,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "soothsayers",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Malik: all that is worshipped besides Allah",
+     "x": 960,
+     "y": 560,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "everything that is worshipped",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "= examples",
+     "x": 960,
+     "y": 720,
+     "size": 54,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "some of its instances",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Comprehensively defined",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Ibn al-Qayyim: the full definition",
+     "x": 960,
+     "y": 90,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "anything through which a servant exceeds his limit",
+     "x": 960,
+     "y": 180,
+     "size": 32,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "exceeds his limit",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "idols",
+     "box": [
+      260,
+      280,
+      400,
+      360
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "worshipped",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Worshipped",
+     "x": 460,
+     "y": 680,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "worshipped",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "steps",
+     "box": [
+      760,
+      280,
+      400,
+      360
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "followed",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Followed",
+     "x": 960,
+     "y": 680,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "followed",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "crown",
+     "box": [
+      1260,
+      280,
+      400,
+      360
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "obeyed",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Obeyed",
+     "x": 1460,
+     "y": 680,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "obeyed",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "then detailed these three",
+   "els": [
+    {
+     "k": "img",
+     "key": "idols",
+     "box": [
+      260,
+      200,
+      220,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Worshipped besides Allah",
+     "x": 540,
+     "y": 260,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "they worship besides",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "steps",
+     "box": [
+      260,
+      450,
+      220,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "follow without",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Followed without guidance from Allah",
+     "x": 540,
+     "y": 510,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "follow without",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "crown",
+     "box": [
+      260,
+      700,
+      220,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "obey in what",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Obeyed in what is not obedience to Allah",
+     "x": 540,
+     "y": 760,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "obey in what",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "scale",
+     "box": [
+      1540,
+      150,
+      300,
+      260
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "resorting",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "its own chapter",
+     "x": 1690,
+     "y": 430,
+     "size": 24,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "resorting",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "To explain: the servant",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Every servant has a limit",
+     "x": 960,
+     "y": 110,
+     "size": 50,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "fence",
+     "box": [
+      170,
+      400,
+      920,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "worship only Allah",
+     "x": 1150,
+     "y": 430,
+     "size": 34,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "worship anyone but",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "follow only with guidance",
+     "x": 1150,
+     "y": 510,
+     "size": 34,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "follow anyone except",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "obey only in obedience to Allah",
+     "x": 1150,
+     "y": 590,
+     "size": 34,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "obey any created",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "cup",
+     "box": [
+      1300,
+      680,
+      260,
+      330
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "exceeded his limit",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Here is an important clarification",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The righteous who were worshipped",
+     "x": 960,
+     "y": 240,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "without being pleased with it",
+     "x": 960,
+     "y": 320,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.9
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "are not Taghut",
+     "x": 960,
+     "y": 440,
+     "size": 64,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "not pleased",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      860,
+      560,
+      200,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "not pleased",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "qualified the definition",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Sheikh Uthman al-Khamis",
+     "x": 960,
+     "y": 120,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Taghut: whoever is worshipped",
+     "x": 960,
+     "y": 280,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "is everyone who",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "and is pleased with it",
+     "x": 960,
+     "y": 370,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "pleased with that",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "or calls people to worship him",
+     "x": 960,
+     "y": 460,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "calls people",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "If the worshipped is righteous,",
+     "x": 960,
+     "y": 640,
+     "size": 36,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "if the worshipped is",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "that worship goes to the Shaytan who ordered it",
+     "x": 960,
+     "y": 710,
+     "size": 36,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "went to the",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The author of the book is",
+   "els": [
+    {
+     "k": "img",
+     "key": "pen",
+     "box": [
+      150,
+      300,
+      700,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Imam Muhammad",
+     "x": 1000,
+     "y": 280,
+     "size": 60,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "ibn Abd al-Wahhab",
+     "x": 1000,
+     "y": 370,
+     "size": 60,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "rahimahullah",
+     "x": 1000,
+     "y": 460,
+     "size": 32,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "He was born",
+   "els": [
+    {
+     "k": "img",
+     "key": "town",
+     "box": [
+      150,
+      190,
+      820,
+      700
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Born: al-Uyaynah, Najd",
+     "x": 1060,
+     "y": 300,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "1115 AH",
+     "x": 1060,
+     "y": 380,
+     "size": 60,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1.8
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Died: ad-Dir’iyyah",
+     "x": 1060,
+     "y": 560,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "he died",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "1206 AH",
+     "x": 1060,
+     "y": 640,
+     "size": 60,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "he died",
+      "offset": 1.8
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "described his call",
+   "els": [
+    {
+     "k": "img",
+     "key": "tsg",
+     "box": [
+      150,
+      300,
+      760,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "He called Najd to Tawhid",
+     "x": 1000,
+     "y": 260,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "and forbade worshipping",
+     "x": 1000,
+     "y": 380,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "forbidden them",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "trees · stones · graves · idols",
+     "x": 1000,
+     "y": 450,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "forbidden them",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "and believing in magic and fortune-tellers",
+     "x": 1000,
+     "y": 580,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 820,
+     "at": {
+      "phrase": "believing in magic",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "about his book he said",
+   "els": [
+    {
+     "k": "img",
+     "key": "book",
+     "box": [
+      150,
+      250,
+      760,
+      500
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "“original in meaning”",
+     "x": 1000,
+     "y": 380,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "original in meaning",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "So what distinguishes",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "What makes this book special?",
+     "x": 960,
+     "y": 450,
+     "size": 64,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "First, its subject",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "1 · Its subject",
+     "x": 960,
+     "y": 100,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "worship",
+     "box": [
+      150,
+      250,
+      620,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the Tawhid of worship",
+     "x": 840,
+     "y": 290,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "second type",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the first to gather its chapters in one book",
+     "x": 840,
+     "y": 390,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 950,
+     "at": {
+      "phrase": "first to gather",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the servants’ obligations toward Allah",
+     "x": 840,
+     "y": 560,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 950,
+     "at": {
+      "phrase": "obligations toward",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Second, its method",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "2 · Its method",
+     "x": 960,
+     "y": 90,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "layers",
+     "box": [
+      150,
+      260,
+      620,
+      560
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Title",
+     "x": 880,
+     "y": 260,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "sets a title",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Verses of the Qur’an",
+     "x": 880,
+     "y": 360,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "verses from",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Hadiths of the Prophet ﷺ",
+     "x": 880,
+     "y": 460,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "hadiths of the Prophet",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Reports of the Companions",
+     "x": 880,
+     "y": 560,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "reports from",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Issues drawn from them",
+     "x": 880,
+     "y": 660,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "closes the chapter",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "So his effort went",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "His effort: choosing and selecting",
+     "x": 960,
+     "y": 110,
+     "size": 46,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "quran",
+     "box": [
+      560,
+      230,
+      800,
+      560
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "the speech of Allah",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "mostly the speech of Allah and His Messenger ﷺ",
+     "x": 960,
+     "y": 860,
+     "size": 38,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "the speech of Allah",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Third, the acceptance",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "3 · Accepted and spread",
+     "x": 960,
+     "y": 100,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "globe",
+     "box": [
+      660,
+      210,
+      600,
+      560
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "spread very widely",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "many commentaries were written on it",
+     "x": 960,
+     "y": 850,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "many commentaries",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "summed up the subject",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The book in one sentence",
+     "x": 960,
+     "y": 90,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markyes",
+     "box": [
+      260,
+      240,
+      200,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "such as the",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the Tawhid of worship",
+     "x": 520,
+     "y": 290,
+     "size": 48,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "such as the",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      260,
+      480,
+      200,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "contradicts it",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "major Shirk: contradicts it",
+     "x": 520,
+     "y": 530,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "contradicts it",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      260,
+      720,
+      200,
+      200
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "due perfection",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "minor Shirk: harms its perfection",
+     "x": 520,
+     "y": 770,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "due perfection",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The author opens his book",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Introduction + 66 chapters",
+     "x": 960,
+     "y": 200,
+     "size": 60,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "tiles",
+     "labels": [
+      "Intro",
+      "1",
+      "2",
+      "3",
+      "…",
+      "66"
+     ],
+     "x": 960,
+     "y": 420,
+     "at": {
+      "phrase": "after it",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "flowers",
+     "box": [
+      460,
+      700,
+      1000,
+      260
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 1
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Here is a quick look",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "A quick look at the chapters",
+     "x": 960,
+     "y": 450,
+     "size": 60,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The book begins by explaining",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Tawhid itself",
+     "x": 960,
+     "y": 90,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      160,
+      220,
+      300,
+      520
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "its virtue and the sins it covers",
+     "x": 560,
+     "y": 260,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "benefits of",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "entering Paradise without reckoning",
+     "x": 560,
+     "y": 360,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "admitted into",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "fearing Shirk",
+     "x": 560,
+     "y": 460,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "the fear of",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the testimony of faith",
+     "x": 560,
+     "y": 560,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "calling people to",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "explaining Tawhid and the testimony",
+     "x": 560,
+     "y": 660,
+     "size": 38,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "then explaining",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Then it moves to matters",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "What contradicts or weakens it",
+     "x": 960,
+     "y": 80,
+     "size": 48,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "ring",
+     "box": [
+      180,
+      170,
+      360,
+      250
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "ring or a thread",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "rings and threads",
+     "x": 360,
+     "y": 440,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 500,
+     "at": {
+      "phrase": "ring or a thread",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "amulet",
+     "box": [
+      780,
+      170,
+      360,
+      250
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "amulets",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "amulets",
+     "x": 960,
+     "y": 440,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 500,
+     "at": {
+      "phrase": "amulets",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "tsg",
+     "box": [
+      1380,
+      170,
+      360,
+      250
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "a tree or a stone",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "seeking blessing from a tree or a stone",
+     "x": 1560,
+     "y": 440,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 480,
+     "at": {
+      "phrase": "a tree or a stone",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "sheep",
+     "box": [
+      180,
+      580,
+      360,
+      250
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "sacrificing",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "sacrificing to other than Allah",
+     "x": 360,
+     "y": 850,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 500,
+     "at": {
+      "phrase": "sacrificing",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      840,
+      590,
+      240,
+      240
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "vowing",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "vowing to other than Allah",
+     "x": 960,
+     "y": 850,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 500,
+     "at": {
+      "phrase": "vowing",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      1440,
+      590,
+      240,
+      240
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "seeking refuge",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "seeking refuge or help from other than Allah",
+     "x": 1560,
+     "y": 850,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 480,
+     "at": {
+      "phrase": "seeking refuge",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Then come chapters showing",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "No created being owns anything",
+     "x": 960,
+     "y": 280,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Intercession belongs to Allah",
+     "x": 960,
+     "y": 430,
+     "size": 46,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "intercession belongs",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Guidance is in His hand",
+     "x": 960,
+     "y": 530,
+     "size": 46,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "guidance is in",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      880,
+      630,
+      160,
+      260
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "guidance is in",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Then chapters on exaggeration",
+   "els": [
+    {
+     "k": "img",
+     "key": "tsg",
+     "box": [
+      150,
+      250,
+      700,
+      420
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Exaggeration about the righteous",
+     "x": 960,
+     "y": 280,
+     "size": 36,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the cause of falling into Shirk",
+     "x": 960,
+     "y": 380,
+     "size": 40,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "was the reason",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "fence",
+     "box": [
+      1000,
+      520,
+      700,
+      320
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "blocked every way",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "every path to Shirk is blocked",
+     "x": 1350,
+     "y": 880,
+     "size": 34,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "blocked every way",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Then chapters on magic",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Magic · Soothsaying",
+     "x": 960,
+     "y": 120,
+     "size": 50,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "moon",
+     "box": [
+      360,
+      260,
+      480,
+      400
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "astrology",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Astrology",
+     "x": 600,
+     "y": 700,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "astrology",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "bird",
+     "box": [
+      1080,
+      260,
+      480,
+      400
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "bad omens",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Bad omens",
+     "x": 1320,
+     "y": 700,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "bad omens",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "the worship of the heart",
+   "els": [
+    {
+     "k": "img",
+     "key": "heart",
+     "box": [
+      140,
+      210,
+      600,
+      520
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Love · Fear · Trust · Patience",
+     "x": 860,
+     "y": 280,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "love, fear",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Showing off",
+     "x": 860,
+     "y": 520,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "showing off",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "working only for this world",
+     "x": 860,
+     "y": 620,
+     "size": 38,
+     "col": "#B9797A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "present life",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "mirror",
+     "box": [
+      1480,
+      700,
+      240,
+      320
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "showing off",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Then chapters on obedience",
+   "els": [
+    {
+     "k": "img",
+     "key": "scale",
+     "box": [
+      560,
+      230,
+      800,
+      540
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Obedience and judgment",
+     "x": 960,
+     "y": 840,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Then many chapters on revering",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Revering Allah",
+     "x": 960,
+     "y": 90,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "His names and attributes",
+     "x": 960,
+     "y": 180,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "names and attributes",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "markno",
+     "box": [
+      260,
+      320,
+      260,
+      260
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "swearing by",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "swearing by other than Allah",
+     "x": 390,
+     "y": 650,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 440,
+     "at": {
+      "phrase": "swearing by",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "clock",
+     "box": [
+      770,
+      300,
+      380,
+      320
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "cursing Time",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "cursing time",
+     "x": 960,
+     "y": 650,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "cursing Time",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "wind",
+     "box": [
+      1340,
+      300,
+      380,
+      320
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "cursing the wind",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "cursing the wind",
+     "x": 1530,
+     "y": 650,
+     "size": 30,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "cursing the wind",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "“If only…”  ·  mocking the religion",
+     "x": 960,
+     "y": 820,
+     "size": 36,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "If only",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "closes his book with a chapter",
+   "els": [
+    {
+     "k": "img",
+     "key": "globe",
+     "box": [
+      660,
+      200,
+      600,
+      580
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "The greatness of Allah",
+     "x": 960,
+     "y": 850,
+     "size": 56,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The meaning of the verse",
+   "els": [
+    {
+     "k": "card",
+     "ar": "﴿وَمَا قَدَرُوا اللَّهَ حَقَّ قَدْرِهِ﴾",
+     "en": "“No just estimate have they made of Allah, such as is due to Him”",
+     "ref": "Az-Zumar 39:67",
+     "x": 260,
+     "y": 280,
+     "w": 1400,
+     "hl": "“No just estimate have they made of Allah,",
+     "hlAt": {
+      "phrase": "No just estimate",
+      "offset": 0
+     },
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "This explanation is for everyone",
+   "els": [
+    {
+     "k": "img",
+     "key": "group",
+     "box": [
+      140,
+      190,
+      760,
+      760
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "For everyone",
+     "x": 1000,
+     "y": 260,
+     "size": 72,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "students of knowledge and others",
+     "x": 1000,
+     "y": 390,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "student of knowledge",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "new Muslims",
+     "x": 1000,
+     "y": 470,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "recently entered",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "those who grew up Muslim",
+     "x": 1000,
+     "y": 550,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "grew up",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "young men and young women",
+     "x": 1000,
+     "y": 630,
+     "size": 38,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "young man",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "We do not assume",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "No prior study needed",
+     "x": 960,
+     "y": 150,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "simple words",
+     "x": 960,
+     "y": 270,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "simple words",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "every term explained",
+     "x": 960,
+     "y": 360,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "clarify every term",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "phones",
+     "box": [
+      760,
+      450,
+      400,
+      400
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "listening alone",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "listening alone is enough",
+     "x": 960,
+     "y": 900,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "listening alone",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "It is part of trustworthiness",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Where does this explanation come from?",
+     "x": 960,
+     "y": 110,
+     "size": 52,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "not our own opinion",
+     "x": 960,
+     "y": 250,
+     "size": 44,
+     "col": "#B9797A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "not our own",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "conveying · arranging · simplifying",
+     "x": 960,
+     "y": 340,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "conveying",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the words of the people of knowledge",
+     "x": 960,
+     "y": 430,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "words of the people",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "scholar",
+     "box": [
+      760,
+      520,
+      400,
+      460
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "words of the people",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "We follow the text",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Kitab at-Tawhid itself",
+     "x": 960,
+     "y": 120,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "explained through three sources",
+     "x": 960,
+     "y": 230,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "three sources",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "book",
+     "box": [
+      700,
+      330,
+      520,
+      330
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "three sources",
+      "offset": 0
+     }
+    },
+    {
+     "k": "badge",
+     "n": "1",
+     "x": 560,
+     "y": 760,
+     "at": {
+      "phrase": "three sources",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Fath al-Majid",
+     "x": 560,
+     "y": 810,
+     "size": 32,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "three sources",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "badge",
+     "n": "2",
+     "x": 960,
+     "y": 760,
+     "at": {
+      "phrase": "three sources",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Sheikh al-Adawi",
+     "x": 960,
+     "y": 810,
+     "size": 32,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "three sources",
+      "offset": 0.8
+     }
+    },
+    {
+     "k": "badge",
+     "n": "3",
+     "x": 1360,
+     "y": 760,
+     "at": {
+      "phrase": "three sources",
+      "offset": 1.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Sheikh al-Khamis",
+     "x": 1360,
+     "y": 810,
+     "size": 32,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "three sources",
+      "offset": 1.2
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The first source",
+   "els": [
+    {
+     "k": "img",
+     "key": "book",
+     "box": [
+      130,
+      230,
+      760,
+      500
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "1 · Fath al-Majid",
+     "x": 980,
+     "y": 230,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "by Sheikh Abd al-Rahman ibn Hasan",
+     "x": 980,
+     "y": 330,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 820,
+     "at": {
+      "phrase": "",
+      "offset": 1.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the author’s grandson",
+     "x": 980,
+     "y": 400,
+     "size": 32,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "grandson",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "among the best commentaries",
+     "x": 980,
+     "y": 520,
+     "size": 40,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "among the best",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "For its Arabic text",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "The editions we use",
+     "x": 960,
+     "y": 110,
+     "size": 50,
+     "col": "#5B6470",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Arabic: Darussalam edition",
+     "x": 960,
+     "y": 270,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "English: Dar al-Fikr, Beirut",
+     "x": 960,
+     "y": 360,
+     "size": 44,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "for the English",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Where it departs from the Arabic, we follow the Arabic",
+     "x": 960,
+     "y": 500,
+     "size": 34,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "departs from",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "pen",
+     "box": [
+      760,
+      600,
+      400,
+      300
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "for the English",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The Qur an is its Arabic text",
+   "els": [
+    {
+     "k": "img",
+     "key": "quran",
+     "box": [
+      130,
+      230,
+      760,
+      560
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "The Qur’an is Arabic",
+     "x": 980,
+     "y": 260,
+     "size": 52,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the English is a translation of its meaning",
+     "x": 980,
+     "y": 360,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 820,
+     "at": {
+      "phrase": "translation of the meaning",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Tawhid · Taghut · Shirk",
+     "x": 980,
+     "y": 560,
+     "size": 48,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "major Islamic terms",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "kept in Arabic, explained when they first appear",
+     "x": 980,
+     "y": 640,
+     "size": 30,
+     "col": "#8C827A",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 820,
+     "at": {
+      "phrase": "explain each term",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The second source",
+   "els": [
+    {
+     "k": "img",
+     "key": "scholar",
+     "box": [
+      130,
+      200,
+      700,
+      780
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "2 · Sheikh Mustafa al-Adawi",
+     "x": 920,
+     "y": 230,
+     "size": 42,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.4
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "linked to Qurrat Uyun al-Muwahhidin",
+     "x": 920,
+     "y": 330,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 860,
+     "at": {
+      "phrase": "tied his explanation",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "cautions we must convey",
+     "x": 920,
+     "y": 470,
+     "size": 40,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "indispensable",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "because an error in creed is dangerous",
+     "x": 920,
+     "y": 550,
+     "size": 34,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 860,
+     "at": {
+      "phrase": "an error in",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "Among these guidelines",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "His guidelines",
+     "x": 960,
+     "y": 90,
+     "size": 52,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "puzzle",
+     "box": [
+      180,
+      220,
+      280,
+      230
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "understood together",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Texts are understood together",
+     "x": 520,
+     "y": 290,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "understood together",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "mirror",
+     "box": [
+      180,
+      470,
+      280,
+      230
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "aim of studying",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Apply it to yourself, do not rush to judge others",
+     "x": 520,
+     "y": 540,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 1250,
+     "at": {
+      "phrase": "aim of studying",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "chain",
+     "box": [
+      180,
+      720,
+      280,
+      230
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "chain of narration",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Weak narrations are pointed out",
+     "x": 520,
+     "y": 790,
+     "size": 40,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": false,
+     "maxw": 0,
+     "at": {
+      "phrase": "chain of narration",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "The third source",
+   "els": [
+    {
+     "k": "img",
+     "key": "lantern",
+     "box": [
+      160,
+      220,
+      300,
+      520
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "3 · Sheikh Uthman al-Khamis",
+     "x": 1060,
+     "y": 300,
+     "size": 42,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.3
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "concise and close to everyone",
+     "x": 1060,
+     "y": 400,
+     "size": 40,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "being concise",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "In the next episode",
+   "els": [
+    {
+     "k": "txt",
+     "txt": "Next episode",
+     "x": 960,
+     "y": 110,
+     "size": 56,
+     "col": "#B9797A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the opening verses of the book",
+     "x": 960,
+     "y": 280,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "opening of the book",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the hadith of Mu’adh",
+     "x": 960,
+     "y": 370,
+     "size": 42,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "hadith of",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "the right of Allah over His servants",
+     "x": 960,
+     "y": 460,
+     "size": 38,
+     "col": "#60805A",
+     "weight": "Bold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "obligations toward",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "book",
+     "box": [
+      760,
+      560,
+      400,
+      300
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "opening of the book",
+      "offset": 0
+     }
+    }
+   ]
+  },
+  {
+   "anchor": "We ask Allah",
+   "els": [
+    {
+     "k": "img",
+     "key": "moon",
+     "box": [
+      1450,
+      80,
+      300,
+      270
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.2
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "sincerity in word and deed",
+     "x": 960,
+     "y": 190,
+     "size": 44,
+     "col": "#60805A",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "sincerity",
+      "offset": 0
+     }
+    },
+    {
+     "k": "ar",
+     "txt": "وَصَلَّى اللهُ وَسَلَّمَ عَلَى نَبِيِّنَا مُحَمَّدٍ، وَعَلَى آلِهِ وَصَحْبِهِ أَجْمَعِينَ",
+     "x": 960,
+     "y": 290,
+     "size": 56,
+     "col": "#B9797A",
+     "at": {
+      "phrase": "Wa sallallahu",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "Wa sallallahu wa sallama ‘ala nabiyyina Muhammad, wa ‘ala alihi wa sahbihi ajma‘in",
+     "x": 960,
+     "y": 425,
+     "size": 22,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "Wa sallallahu",
+      "offset": 0
+     }
+    },
+    {
+     "k": "ar",
+     "txt": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ",
+     "x": 960,
+     "y": 485,
+     "size": 72,
+     "col": "#B9797A",
+     "at": {
+      "phrase": "As-salamu alaykum",
+      "offset": 0
+     }
+    },
+    {
+     "k": "txt",
+     "txt": "As-salamu ‘alaykum wa rahmatullahi wa barakatuh",
+     "x": 960,
+     "y": 665,
+     "size": 26,
+     "col": "#5B6470",
+     "weight": "SemiBold",
+     "center": true,
+     "maxw": 0,
+     "at": {
+      "phrase": "As-salamu alaykum",
+      "offset": 0
+     }
+    },
+    {
+     "k": "img",
+     "key": "flowers",
+     "box": [
+      420,
+      760,
+      1080,
+      250
+     ],
+     "rot": 0,
+     "at": {
+      "phrase": "",
+      "offset": 0.6
+     }
+    }
+   ]
+  }
+ ]
+}

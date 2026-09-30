@@ -16,9 +16,29 @@ translation, scene order or timing is changed. Any visual difference from
 
 ## Status
 
-Built and verified: **the first chapter of the introduction episode, 0:00 → 1:03**
-(`Minute1`), matching the v3 render. The rest of the episode is wired up
-(`Episode0-Full`) but has not been reviewed.
+Phase 1 (cloud export) and phase 2 (general studio structure) are done. The
+first chapter of the introduction episode (`tawhid-ep0-first-chapter`,
+0:00 → 1:03) is verified against the v3 render; the rest of the episode is
+resolved from the same project file but has not been reviewed shot by shot.
+
+## Editing a video
+
+Every video is a **project file** — `projects/<id>/project.json` — validated by
+a Zod schema (`src/schema/project.ts`). It holds content only: texts, anchor
+phrases and offsets, positions, colours, image keys. Open the composition in
+Studio and the whole file is in the props panel: text areas for text, a
+dropdown for the image key, a colour picker for colours, a number for every
+offset. Edits preview live. **Press "Save to project.json" on the canvas** to
+write them to the file — Remotion's own Save button cannot, because it only
+rewrites inline literals in `src/Root.tsx`. Editing the file by hand (or by an
+agent) hot-reloads Studio the same way. Both directions are verified.
+
+Everything derived — the timeline, entry animations, sprite geometry, the
+sparkle and dust draws, transitions, the effects cue list — is recomputed at
+runtime by `src/engine/resolve.ts` and reproduces the original Python pipeline
+exactly (0 differences over 385 elements and 250 cues; sparkles bit-identical
+through a CPython-compatible Mersenne Twister). Composition durations follow
+the resolved timeline, so moving an anchor moves the end.
 
 ## Running
 
@@ -28,46 +48,79 @@ npm run dev
 
 Studio opens with two compositions:
 
-| id | range | frames @24fps |
+| id | what | frames |
 |---|---|---|
-| `Minute1` | 0:00 → 1:03 (shots 0-5) | 1510 |
-| `Episode0-Full` | 0:00 → 24:02 | 34625 |
+| `tawhid-ep0` | the whole episode, duration from the timeline | 34625 @24 |
+| `tawhid-ep0-first-chapter` | shots 0-5, ends on the shot boundary (1:03) | 1511 @24 |
+| `tawhid-ep0-preview-540p` | the episode at half resolution — use this on a weak machine | 34625 @24 |
+| `template-shorts-9x16-demo` | Shorts/Reels template with word-by-word captions | 330 @30 |
 
-`Minute1` stops at the shot boundary rather than a flat sixty seconds, so it ends
-on a complete idea — chapter 1 of `chapters.txt`, "Why did Allah create us?".
+Compositions are registered per project in `src/Root.tsx` from `src/projects.ts`.
 
-## How the port is laid out
+## Layout
 
 ```
-tools/                     build-time resolvers (Python, run once per content change)
-  kit/                     the original tawhid-kit engine, kept for reference
-  resolve_scenes.py        scenes.py  -> src/data/scenes.json
-  resolve_sfx.py           sfx3.py    -> src/data/sfxEvents.json
-  sfx_peaks.py             per-file peak levels for sfx3's normalisation
-  bake_particles.py        render3.psprite() -> public/particles/baked/
+brands/<id>/brand.json     identity: palette, fonts, element library, effects banks, rules
+                           tawhid is complete; seoh and bymorpho are empty skeletons
+templates/templates.json   youtube-16x9, shorts-9x16, square-1x1, ad-4x5 — size, fps, safe bands, export preset
+projects/<id>/             -> public/projects/<id>/: project.json (content), words.json (timings), media
+src/schema/project.ts      the Zod schema behind the props panel
 src/engine/
-  constants.ts             palette, fps, fonts, engine.isar
-  ease.ts                  render2.py eo / back / bounce / jit
-  measure.ts               engine.text_sprite + ar_sprite metrics
-  fonts.ts                 font faces (Montserrat variable + Amiri + Amiri Quran)
-  duck.ts                  speech-aware ducking built from words.json
-  types.ts                 shape of scenes.json
+  resolve.ts               project file -> resolved scenes + effects cues (runtime; port of the Python resolvers)
+  locate.ts                anchor phrase -> word index (engine.locate + difflib ratio)
+  pyrandom.ts              CPython-compatible random.Random (bit-identical sparkle/dust draws)
+  measure.ts               text metrics matching PIL (integer glyph advances, no kerning)
+  duck.ts                  effects ducking under speech, per narration
+  constants.ts ease.ts fonts.ts types.ts
 src/components/
-  Sprites.tsx              text / arabic / card / tiles / badge / img sprites
+  Element.tsx Sprites.tsx  entry animations, typing, verse card + highlight, tiles, badge, walk
   Vfx.tsx                  sparkle, dust, glow, highlighter stroke
-  Element.tsx              render2.draw_el + render3's effect passes
-  Shot.tsx                 camera push-in, the three transitions, frame assembly
-  Sfx.tsx                  the effects bed
-  FontGate.tsx             blocks render until fonts are measurable
-src/Episode.tsx            timebase + audio
-src/Root.tsx               compositions
+  Shot.tsx                 camera push-in, push / wipe / fade transitions
+  Sfx.tsx                  the effects bed (Kenney CC0 only, ducked)
+  WordCaptions.tsx         word-by-word captions for vertical formats
+  StudioSave.tsx           the "Save to project.json" overlay (Studio only)
+  FontGate.tsx
+src/Episode.tsx            episode / first-chapter / half-res preview
+src/ShortsDemo.tsx         the 9:16 template demo
+src/projects.ts            project registry (JSON + words imports)
+tools/
+  transcribe.py            faster-whisper word timings; --script snaps them onto the approved text
+  silence_cut.py           shorten long pauses (ffmpeg silencedetect) with a time map
+  export.sh                dispatch the cloud export with a template's preset
+  encode_audio.py          WAV -> verified-lossless FLAC for the repo
+  export_project.py        scenes.py -> project.json (one-time migration of the intro episode)
+  tests/                   parity tests against the baked Python output
+  kit/                     the original tawhid-kit engine, for reference
 ```
 
-Regenerate the data after changing `tools/kit/scenes.py`:
+Installed official packages: `@remotion/transitions`, `lottie`, `motion-blur`,
+`noise`, `shapes`, `paths`, `zod-types` (all 4.0.429), plus `lottie-web`.
+
+### Tools
 
 ```bash
-npm run data
+# word timings for a new episode, spelled as the approved script
+../.venv-align/bin/python tools/transcribe.py narration.flac projects/<id>/words.json --script script.txt --model small
+
+# shorten pauses longer than 0.9 s to 0.6 s, keeping a time map
+../.venv-align/bin/python tools/silence_cut.py narration.flac --out narration_cut.flac --map cuts.json
+
+# cloud export with a platform preset
+tools/export.sh tawhid-ep0-first-chapter youtube-16x9
+tools/export.sh tawhid-ep0 youtube-16x9 range 14400 14640 splice <base run id>
 ```
+
+Run the parity tests after touching the engine:
+
+```bash
+npx tsc -p tools/tests/tsconfig.json && node /tmp/tawhid-tests/tools/tests/test_primitives.js && node /tmp/tawhid-tests/tools/tests/test_resolve.js
+```
+
+## Fixed constraints, all brands
+
+* **No music.** Sound effects only, and only Kenney CC0.
+* Every asset free for commercial use (fonts: SIL OFL; effects and particles: CC0).
+* Preview locally at reduced resolution; final export in the cloud.
 
 ## Faithfulness notes
 

@@ -1,0 +1,6 @@
+{
+  "youtube-16x9": { "width": 1920, "height": 1080, "fps": 24, "safe": { "top": 0, "bottom": 0 }, "export": { "crf": 18, "container": "mp4" }, "note": "long episodes; v2 §6" },
+  "shorts-9x16":  { "width": 1080, "height": 1920, "fps": 30, "safe": { "top": 0.12, "bottom": 0.20 }, "export": { "crf": 20, "container": "mp4" }, "note": "Shorts/Reels; top and bottom fifth covered by app UI (v2 §7)" },
+  "square-1x1":   { "width": 1080, "height": 1080, "fps": 30, "safe": { "top": 0.05, "bottom": 0.05 }, "export": { "crf": 20, "container": "mp4" } },
+  "ad-4x5":       { "width": 1080, "height": 1350, "fps": 30, "safe": { "top": 0.06, "bottom": 0.06 }, "export": { "crf": 20, "container": "mp4" } }
+}

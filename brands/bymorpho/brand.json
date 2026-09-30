@@ -1,0 +1,9 @@
+{
+  "id": "bymorpho",
+  "name": "bymorpho (to be defined)",
+  "palette": {},
+  "fonts": {},
+  "elements": "",
+  "sfx": { "source": "Kenney CC0", "root": "sfx/", "banks": [], "duckDb": -6 },
+  "rules": { "music": false, "commercialUseOnly": true }
+}
