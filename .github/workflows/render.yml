@@ -186,66 +186,61 @@ jobs:
           FPS=${{ steps.plan.outputs.fps }}
           S=${{ steps.plan.outputs.start }}
           E=${{ steps.plan.outputs.end }}
+          PATCH=out/${{ steps.plan.outputs.name }}.mp4
           BASE=$(find base -name '*.mp4' | head -1)
           if [ -z "$BASE" ]; then echo "::error::no base mp4 in that run"; exit 1; fi
           echo "Base: $BASE"
 
           HEAD_END=$(node -e "console.log($S/$FPS)")
           TAIL_START=$(node -e "console.log(($E+1)/$FPS)")
+          MID_LEN=$(node -e "console.log(($E-$S+1)/$FPS)")
 
           mkdir -p splice
           DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$BASE")
           HAS_TAIL=0
           node -e "process.exit($TAIL_START < $DUR - 0.001 ? 0 : 1)" && HAS_TAIL=1
 
-          # Video and audio are spliced separately, on purpose.
+          # Video and audio are spliced by different means, on purpose. Both
+          # approaches below were verified locally against this exact material.
           #
-          # Video splices losslessly with -c copy because the keyframe pass put a
-          # keyframe on every second and the range was snapped to those.
+          # VIDEO: stream-copied through MPEG-TS, which concatenates by plain
+          # `cat`. The concat demuxer re-times each piece from its container
+          # duration and gained 2 frames (1511 -> 1513); a raw Annex-B stream
+          # lost 2 at the seams (1511 -> 1509) whatever the fps_mode. MPEG-TS
+          # carries its own timing per packet and comes out exact. The head is
+          # cut by frame count and the tail starts on a one-second keyframe, so
+          # both are exact by construction and neither is re-encoded.
           #
-          # Audio cannot: an AAC frame is 1024 samples (21.33 ms) and a video
-          # frame at 24 fps is 41.67 ms, so no cut point is on both grids. Copying
-          # audio pads every piece out to a whole AAC frame, and concatenating
-          # three padded pieces drifts the tail late - measured at +0.139 s, which
-          # would slide every later sound effect off its element. So the audio is
-          # rebuilt sample-accurately with atrim and re-encoded once.
-
-          # Video is spliced as a raw H.264 elementary stream, not through the
-          # concat demuxer. The demuxer offsets each piece by the previous
-          # piece's *container duration*, which rounds up to a whole frame and
-          # accumulated two extra frames (1511 -> 1513) on a three-piece join.
-          # Raw Annex-B carries no container timestamps, so timing is
-          # regenerated at a constant fps and the frame count is exactly the sum.
-          # The head is cut by frame count and the tail starts on a one-second
-          # keyframe, so both are exact by construction and still -c copy.
-          RAW=""
+          # AUDIO: cannot be stream-copied at all. An AAC frame is 1024 samples
+          # (21.33 ms) and a video frame at 24 fps is 41.67 ms, so no cut lands
+          # on both grids and every copied piece is padded out to a whole AAC
+          # frame. So the audio is rebuilt with sample-accurate atrim and encoded
+          # once. The patch's own audio must be trimmed to MID_LEN: its AAC track
+          # runs 5.056 s for 5.000 s of video, and that 56 ms was sliding the
+          # whole tail late.
+          TS=""
           if [ "$S" -gt 0 ]; then
-            ffmpeg -y -v error -i "$BASE" -frames:v "$S" -an -c:v copy \
-              -bsf:v h264_mp4toannexb -f h264 splice/vhead.h264
-            RAW="$RAW splice/vhead.h264"
+            ffmpeg -y -v error -i "$BASE" -frames:v "$S" -an -c:v copy -f mpegts splice/head.ts
+            TS="$TS splice/head.ts"
           fi
-          ffmpeg -y -v error -i out/${{ steps.plan.outputs.name }}.mp4 -an -c:v copy \
-            -bsf:v h264_mp4toannexb -f h264 splice/vmid.h264
-          RAW="$RAW splice/vmid.h264"
+          ffmpeg -y -v error -i "$PATCH" -an -c:v copy -f mpegts splice/mid.ts
+          TS="$TS splice/mid.ts"
           if [ "$HAS_TAIL" = "1" ]; then
-            ffmpeg -y -v error -ss "$TAIL_START" -i "$BASE" -an -c:v copy \
-              -bsf:v h264_mp4toannexb -f h264 splice/vtail.h264
-            RAW="$RAW splice/vtail.h264"
+            ffmpeg -y -v error -ss "$TAIL_START" -i "$BASE" -an -c:v copy -f mpegts splice/tail.ts
+            TS="$TS splice/tail.ts"
           fi
-          echo "raw pieces:$RAW"
-          cat $RAW > splice/all.h264
+          echo "video pieces:$TS"
+          cat $TS > splice/all.ts
 
-          # Sample-accurate audio: base[0..S] + new range + base[E+1..end]
           FILTER="[0:a]asplit=2[ah][at];"
-          PARTS=""
-          N=0
+          PARTS=""; N=0
           if [ "$S" -gt 0 ]; then
             FILTER="$FILTER[ah]atrim=end=$HEAD_END,asetpts=PTS-STARTPTS[a0];"
             PARTS="$PARTS[a0]"; N=$((N+1))
           else
             FILTER="$FILTER[ah]anullsink;"
           fi
-          FILTER="$FILTER[1:a]asetpts=PTS-STARTPTS[a1];"
+          FILTER="$FILTER[1:a]atrim=end=$MID_LEN,asetpts=PTS-STARTPTS[a1];"
           PARTS="$PARTS[a1]"; N=$((N+1))
           if [ "$HAS_TAIL" = "1" ]; then
             FILTER="$FILTER[at]atrim=start=$TAIL_START,asetpts=PTS-STARTPTS[a2];"
@@ -255,15 +250,16 @@ jobs:
           fi
           FILTER="$FILTER${PARTS}concat=n=$N:v=0:a=1[aout]"
           echo "audio filter: $FILTER"
-          ffmpeg -y -v error -i "$BASE" -i out/${{ steps.plan.outputs.name }}.mp4 \
-            -filter_complex "$FILTER" -map "[aout]" -c:a aac -b:a 320k splice/audio.m4a
+          ffmpeg -y -v error -i "$BASE" -i "$PATCH" -filter_complex "$FILTER" \
+            -map "[aout]" -c:a aac -b:a 320k splice/audio.m4a
 
-          ffmpeg -y -v error -fflags +genpts -r "$FPS" -i splice/all.h264 -i splice/audio.m4a \
-            -c:v copy -c:a copy -movflags +faststart out/${{ inputs.composition }}_spliced.mp4
+          ffmpeg -y -v error -fflags +genpts -i splice/all.ts -i splice/audio.m4a \
+            -c:v copy -c:a copy -fps_mode passthrough -movflags +faststart \
+            out/${{ inputs.composition }}_spliced.mp4
 
           # The spliced file must be exactly as long as the base, frame for frame.
-          BF=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$BASE")
-          SF=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 out/${{ inputs.composition }}_spliced.mp4)
+          BF=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$BASE" | tr -d ',')
+          SF=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 out/${{ inputs.composition }}_spliced.mp4 | tr -d ',')
           echo "base frames: $BF   spliced frames: $SF"
           if [ "$BF" != "$SF" ]; then
             echo "::error::splice changed the frame count ($BF -> $SF)"; exit 1
