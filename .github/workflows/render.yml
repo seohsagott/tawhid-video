@@ -194,24 +194,69 @@ jobs:
           TAIL_START=$(node -e "console.log(($E+1)/$FPS)")
 
           mkdir -p splice
-          : > splice/list.txt
-          # Head: everything before the range. Omitted when the range starts at 0.
-          if [ "$S" -gt 0 ]; then
-            ffmpeg -y -v error -i "$BASE" -t "$HEAD_END" -c copy splice/head.mp4
-            echo "file 'head.mp4'" >> splice/list.txt
-          fi
-          cp out/${{ steps.plan.outputs.name }}.mp4 splice/mid.mp4
-          echo "file 'mid.mp4'" >> splice/list.txt
-          # Tail: everything after. Omitted when the range runs to the end.
           DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$BASE")
-          if node -e "process.exit($TAIL_START < $DUR - 0.001 ? 0 : 1)"; then
-            ffmpeg -y -v error -ss "$TAIL_START" -i "$BASE" -c copy splice/tail.mp4
-            echo "file 'tail.mp4'" >> splice/list.txt
-          fi
+          HAS_TAIL=0
+          node -e "process.exit($TAIL_START < $DUR - 0.001 ? 0 : 1)" && HAS_TAIL=1
 
-          cat splice/list.txt
-          ffmpeg -y -v error -f concat -safe 0 -i splice/list.txt -c copy \
-            out/${{ inputs.composition }}_spliced.mp4
+          # Video and audio are spliced separately, on purpose.
+          #
+          # Video splices losslessly with -c copy because the keyframe pass put a
+          # keyframe on every second and the range was snapped to those.
+          #
+          # Audio cannot: an AAC frame is 1024 samples (21.33 ms) and a video
+          # frame at 24 fps is 41.67 ms, so no cut point is on both grids. Copying
+          # audio pads every piece out to a whole AAC frame, and concatenating
+          # three padded pieces drifts the tail late - measured at +0.139 s, which
+          # would slide every later sound effect off its element. So the audio is
+          # rebuilt sample-accurately with atrim and re-encoded once.
+
+          : > splice/vlist.txt
+          if [ "$S" -gt 0 ]; then
+            ffmpeg -y -v error -i "$BASE" -t "$HEAD_END" -an -c:v copy splice/vhead.mp4
+            echo "file 'vhead.mp4'" >> splice/vlist.txt
+          fi
+          ffmpeg -y -v error -i out/${{ steps.plan.outputs.name }}.mp4 -an -c:v copy splice/vmid.mp4
+          echo "file 'vmid.mp4'" >> splice/vlist.txt
+          if [ "$HAS_TAIL" = "1" ]; then
+            ffmpeg -y -v error -ss "$TAIL_START" -i "$BASE" -an -c:v copy splice/vtail.mp4
+            echo "file 'vtail.mp4'" >> splice/vlist.txt
+          fi
+          cat splice/vlist.txt
+          ffmpeg -y -v error -f concat -safe 0 -i splice/vlist.txt -c copy splice/video.mp4
+
+          # Sample-accurate audio: base[0..S] + new range + base[E+1..end]
+          FILTER="[0:a]asplit=2[ah][at];"
+          PARTS=""
+          N=0
+          if [ "$S" -gt 0 ]; then
+            FILTER="$FILTER[ah]atrim=end=$HEAD_END,asetpts=PTS-STARTPTS[a0];"
+            PARTS="$PARTS[a0]"; N=$((N+1))
+          else
+            FILTER="$FILTER[ah]anullsink;"
+          fi
+          FILTER="$FILTER[1:a]asetpts=PTS-STARTPTS[a1];"
+          PARTS="$PARTS[a1]"; N=$((N+1))
+          if [ "$HAS_TAIL" = "1" ]; then
+            FILTER="$FILTER[at]atrim=start=$TAIL_START,asetpts=PTS-STARTPTS[a2];"
+            PARTS="$PARTS[a2]"; N=$((N+1))
+          else
+            FILTER="$FILTER[at]anullsink;"
+          fi
+          FILTER="$FILTER${PARTS}concat=n=$N:v=0:a=1[aout]"
+          echo "audio filter: $FILTER"
+          ffmpeg -y -v error -i "$BASE" -i out/${{ steps.plan.outputs.name }}.mp4 \
+            -filter_complex "$FILTER" -map "[aout]" -c:a aac -b:a 320k splice/audio.m4a
+
+          ffmpeg -y -v error -i splice/video.mp4 -i splice/audio.m4a \
+            -c copy -movflags +faststart out/${{ inputs.composition }}_spliced.mp4
+
+          # The spliced file must be exactly as long as the base, frame for frame.
+          BF=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$BASE")
+          SF=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 out/${{ inputs.composition }}_spliced.mp4)
+          echo "base frames: $BF   spliced frames: $SF"
+          if [ "$BF" != "$SF" ]; then
+            echo "::error::splice changed the frame count ($BF -> $SF)"; exit 1
+          fi
           ls -la out
 
       - name: Report
