@@ -54,6 +54,12 @@ on:
         description: "Optional JSON passed to the composition as props"
         required: false
         default: ""
+      image_format:
+        description: "Frame capture before encoding: png (lossless) or jpeg (Remotion default, q80)"
+        required: false
+        default: "jpeg"
+        type: choice
+        options: [jpeg, png]
 
 concurrency:
   group: render-${{ inputs.composition }}
@@ -128,10 +134,10 @@ jobs:
             echo "frames=$S-$E" >> "$GITHUB_OUTPUT"
             echo "start=$S" >> "$GITHUB_OUTPUT"
             echo "end=$E" >> "$GITHUB_OUTPUT"
-            echo "name=${COMP}_${S}-${E}" >> "$GITHUB_OUTPUT"
+            echo "name=${COMP}_${S}-${E}_${{ inputs.image_format }}" >> "$GITHUB_OUTPUT"
           else
             echo "frames=" >> "$GITHUB_OUTPUT"
-            echo "name=${COMP}" >> "$GITHUB_OUTPUT"
+            echo "name=${COMP}_${{ inputs.image_format }}" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Render
@@ -143,6 +149,7 @@ jobs:
             "out/render.mp4"
             "--codec=h264"
             "--crf=${{ inputs.crf }}"
+            "--image-format=${{ inputs.image_format }}"
             "--log=info"
             "--timeout=180000"
             "--concurrency=2"
