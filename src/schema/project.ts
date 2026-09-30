@@ -35,6 +35,7 @@ const Txt = z.object({
   center: z.boolean(),
   maxw: z.number().describe("wrap width, 0 = no wrap"),
   at: At,
+  strikeAt: At.optional().describe("when set, a rose line strikes the text through at this anchor"),
 });
 const Ar = z.object({
   k: z.literal("ar"),
@@ -83,6 +84,16 @@ export const ProjectSchema = z.object({
   audio: z.string().describe("path under public/"),
   wordsFile: z.string().describe("word timings, path under public/"),
   tailSeconds: z.number().describe("paper held after the last word"),
+  captions: z
+    .object({
+      enabled: z.boolean(),
+      yFrac: z.number().describe("vertical centre as a fraction of the height"),
+      size: z.number(),
+      color: zColor(),
+      activeColor: zColor(),
+    })
+    .optional()
+    .describe("word-by-word captions (vertical formats, v2 §7)"),
   shots: z.array(ShotSchema),
 });
 

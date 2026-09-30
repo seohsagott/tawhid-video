@@ -8,13 +8,17 @@ import type { Project } from "./schema/project";
 import type { Words } from "./engine/locate";
 import tawhidEp0 from "../public/projects/tawhid-ep0/project.json";
 import tawhidEp0Words from "../public/projects/tawhid-ep0/words.json";
+import tawhidShort01 from "../public/projects/tawhid-short-01/project.json";
+import tawhidShort01Words from "../public/projects/tawhid-short-01/words.json";
 
 export const PROJECTS: Record<string, Project> = {
   "tawhid-ep0": tawhidEp0 as unknown as Project,
+  "tawhid-short-01": tawhidShort01 as unknown as Project,
 };
 
 export const WORDS: Record<string, Words> = {
   "tawhid-ep0": tawhidEp0Words as unknown as Words,
+  "tawhid-short-01": tawhidShort01Words as unknown as Words,
 };
 
 export const wordsFor = (id: string): Words => {

@@ -88,7 +88,7 @@ export const resolveProject = (p: Project, words: Words): Scenes => {
         const g = imgGeom(e.key, box, e.rot);
         const anim = SLIDE.has(e.key) ? "slide" : DROP.has(e.key) ? "drop" : "pop";
         const el: ImgEl = { id: eid, k: "img", anim, t, dur: 0.6, key: e.key, box, rot: e.rot,
-          dir: e.box[0] + e.box[2] / 2 < 960 ? -1 : 1, sw: g.sw, sh: g.sh, x: g.x, y: g.y };
+          dir: e.box[0] + e.box[2] / 2 < p.width / 2 ? -1 : 1, sw: g.sw, sh: g.sh, x: g.x, y: g.y };
         if (GLOWK.has(e.key)) el.glow = Math.trunc(Math.max(g.sw, g.sh) * 1.5);
         return el;
       }
@@ -99,6 +99,7 @@ export const resolveProject = (p: Project, words: Words): Scenes => {
           t, dur: big ? r4(clamp(n * 0.04, 0.45, 1.3)) : 0.5, txt: e.txt, x: e.x, y: e.y, size: e.size,
           col: e.col, weight: e.weight, center: e.center, maxw: e.maxw || null };
         if (big && STROKE_COLS.has(e.col.toUpperCase()) && n < 40) el.stroke = true;
+        if (e.strikeAt) el.strikeT = r4(rt(e.strikeAt, s));
         return el;
       }
       if (e.k === "ar") return { id: eid, k: "ar", anim: "revealR", t, dur: 1.0, txt: e.txt, x: e.x, y: e.y, size: e.size, col: e.col };

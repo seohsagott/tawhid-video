@@ -5,15 +5,15 @@
 import React from "react";
 import { Img, staticFile } from "remotion";
 import { clamp, eo } from "../engine/ease";
-import { H, TR, W } from "../engine/constants";
+import { TR } from "../engine/constants";
 import type { Shot } from "../engine/types";
 import { ElementView } from "./Element";
 
-export const Paper: React.FC = () => (
+export const Paper: React.FC<{ w: number; h: number }> = ({ w, h }) => (
   <Img
     src={staticFile("el/bg.png")}
     alt=""
-    style={{ position: "absolute", left: 0, top: 0, width: W, height: H }}
+    style={{ position: "absolute", left: 0, top: 0, width: w, height: h, objectFit: "cover" }}
   />
 );
 
@@ -22,17 +22,17 @@ export const cameraZoom = (shot: Shot, t: number): number =>
   1 + 0.028 * clamp((t - shot.st) / Math.max(1, shot.en - shot.st));
 
 /** One shot drawn on paper, with the camera applied — render3's `lay`. */
-export const ShotLayer: React.FC<{ shot: Shot; t: number; n12: number }> = ({ shot, t, n12 }) => (
+export const ShotLayer: React.FC<{ shot: Shot; t: number; n12: number; w: number; h: number }> = ({ shot, t, n12, w, h }) => (
   <div
     style={{
       position: "absolute",
-      width: W,
-      height: H,
+      width: w,
+      height: h,
       transform: `scale(${cameraZoom(shot, t)})`,
       transformOrigin: "center center",
     }}
   >
-    <Paper />
+    <Paper w={w} h={h} />
     {shot.els.map((el) => (
       <ElementView key={el.id} el={el} t={t} n12={n12} />
     ))}
@@ -43,15 +43,15 @@ export const ShotLayer: React.FC<{ shot: Shot; t: number; n12: number }> = ({ sh
  * render3.sheet: a blank page that slides across for the `wipe` transition,
  * with a soft 60px leading-edge shadow (alpha ramps as (x/60)^2 * 90).
  */
-export const Sheet: React.FC<{ x: number }> = ({ x }) => (
-  <div style={{ position: "absolute", left: x, top: 0, width: W + 60, height: H }}>
+export const Sheet: React.FC<{ x: number; w: number; h: number }> = ({ x, w, h }) => (
+  <div style={{ position: "absolute", left: x, top: 0, width: w + 60, height: h }}>
     <div
       style={{
         position: "absolute",
         left: 0,
         top: 0,
         width: 60,
-        height: H,
+        height: h,
         background:
           "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.088) 50%, rgba(0,0,0,0.353) 100%)",
       }}
@@ -59,7 +59,7 @@ export const Sheet: React.FC<{ x: number }> = ({ x }) => (
     <Img
       src={staticFile("el/bg.png")}
       alt=""
-      style={{ position: "absolute", left: 60, top: 0, width: W, height: H }}
+      style={{ position: "absolute", left: 60, top: 0, width: w, height: h, objectFit: "cover" }}
     />
   </div>
 );
@@ -72,16 +72,17 @@ export const Sheet: React.FC<{ x: number }> = ({ x }) => (
  * the incoming half belongs to the shot that is starting and uses its own.
  * Verse shots are always `fade` (v2 §6).
  */
-export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number }> = ({ shots, t, n12 }) => {
+export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number; w: number; h: number }> = ({ shots, t, n12, w, h }) => {
+  const W = w;
   const cur = shots.findIndex((s) => s.st <= t && t < s.en);
-  if (cur < 0) return <Paper />;
+  if (cur < 0) return <Paper w={w} h={h} />;
 
   const s = shots[cur];
   const nxt = cur + 1 < shots.length ? shots[cur + 1] : null;
-  const lay = <ShotLayer shot={s} t={t} n12={n12} />;
+  const lay = <ShotLayer shot={s} t={t} n12={n12} w={w} h={h} />;
 
   const stage = (children: React.ReactNode, extra?: React.CSSProperties) => (
-    <div style={{ position: "absolute", width: W, height: H, overflow: "hidden", ...extra }}>
+    <div style={{ position: "absolute", width: w, height: h, overflow: "hidden", ...extra }}>
       {children}
     </div>
   );
@@ -92,7 +93,7 @@ export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number }> = ({ sho
     if (nxt.trans === "push") {
       return (
         <>
-          <Paper />
+          <Paper w={w} h={h} />
           {stage(<div style={{ transform: `translateX(${-W * q}px)` }}>{lay}</div>)}
         </>
       );
@@ -100,7 +101,7 @@ export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number }> = ({ sho
     if (nxt.trans === "fade") {
       return (
         <>
-          <Paper />
+          <Paper w={w} h={h} />
           <div style={{ position: "absolute", opacity: 1 - q }}>{lay}</div>
         </>
       );
@@ -108,7 +109,7 @@ export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number }> = ({ sho
     return (
       <>
         {lay}
-        <Sheet x={W * (1 - q) - 60} />
+        <Sheet x={W * (1 - q) - 60} w={w} h={h} />
       </>
     );
   }
@@ -119,7 +120,7 @@ export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number }> = ({ sho
     if (s.trans === "push") {
       return (
         <>
-          <Paper />
+          <Paper w={w} h={h} />
           {stage(<div style={{ transform: `translateX(${W - W * q}px)` }}>{lay}</div>)}
         </>
       );
@@ -127,7 +128,7 @@ export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number }> = ({ sho
     if (s.trans === "fade") {
       return (
         <>
-          <Paper />
+          <Paper w={w} h={h} />
           <div style={{ position: "absolute", opacity: q }}>{lay}</div>
         </>
       );
@@ -135,7 +136,7 @@ export const Frame: React.FC<{ shots: Shot[]; t: number; n12: number }> = ({ sho
     return (
       <>
         {lay}
-        <Sheet x={-W * q - 60} />
+        <Sheet x={-W * q - 60} w={w} h={h} />
       </>
     );
   }

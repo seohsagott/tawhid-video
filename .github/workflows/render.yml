@@ -43,9 +43,9 @@ on:
         required: false
         default: ""
       crf:
-        description: "Quality, lower is better (18 visually lossless, 23 default)"
+        description: "Quality, lower is better. 16 approved for finals; 23 is the x264 default"
         required: false
-        default: "18"
+        default: "16"
       remotion_version:
         description: "Remotion version for this render ('latest' or e.g. 4.0.540)"
         required: false

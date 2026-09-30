@@ -39,6 +39,7 @@ export const RemotionRoot: React.FC = () => (
             return { durationInFrames: Math.round(d.end * props.fps), fps: props.fps, width: props.width, height: props.height };
           }}
         />
+        {p.id === "tawhid-ep0" ? (
         <Composition
           id={`${p.id}-first-chapter`}
           component={FirstChapter}
@@ -53,6 +54,7 @@ export const RemotionRoot: React.FC = () => (
             return { durationInFrames: Math.round(d.firstChapterEnd * props.fps), fps: props.fps };
           }}
         />
+        ) : null}
         <Composition
           id={`${p.id}-preview-540p`}
           component={PreviewHalf}

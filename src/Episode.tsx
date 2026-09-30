@@ -8,7 +8,7 @@
  */
 import React, { useMemo } from "react";
 import { AbsoluteFill, Audio, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { FPS12, H, W } from "./engine/constants";
+import { FPS12 } from "./engine/constants";
 import { makeDucker } from "./engine/duck";
 import { resolveProject, resolveSfx } from "./engine/resolve";
 import type { Project } from "./schema/project";
@@ -17,6 +17,7 @@ import { FontGate } from "./components/FontGate";
 import { Frame } from "./components/Shot";
 import { SfxTrack } from "./components/Sfx";
 import { StudioSave } from "./components/StudioSave";
+import { WordCaptions } from "./components/WordCaptions";
 
 export type EpisodeProps = Project & {
   /** optional end, in episode seconds (used by the first-chapter composition) */
@@ -38,10 +39,15 @@ export const Episode: React.FC<EpisodeProps> = (props) => {
   const t = n12 / FPS12;
   const shots = scenes.shots.filter((s) => s.st < end + 1);
 
+  const { width: W, height: H } = project;
+  const cap = project.captions;
   return (
     <AbsoluteFill style={{ width: W, height: H, backgroundColor: "#E4DBD0", overflow: "hidden" }}>
       <FontGate>
-        <Frame shots={shots} t={t} n12={n12} />
+        <Frame shots={shots} t={t} n12={n12} w={W} h={H} />
+        {cap?.enabled ? (
+          <WordCaptions words={words} t={t} width={W} height={H} yFrac={cap.yFrac} size={cap.size} color={cap.color} activeColor={cap.activeColor} />
+        ) : null}
       </FontGate>
       <Audio src={staticFile(project.audio)} />
       <SfxTrack events={sfx} duck={duck} fps={fps} from={0} to={end} />
@@ -62,8 +68,8 @@ export const FirstChapter: React.FC<Project> = (project) => {
  * painted at a quarter of the pixels. Never used for export.
  */
 export const PreviewHalf: React.FC<Project> = (project) => (
-  <AbsoluteFill style={{ width: W / 2, height: H / 2, overflow: "hidden" }}>
-    <div style={{ width: W, height: H, transform: "scale(0.5)", transformOrigin: "top left", position: "absolute" }}>
+  <AbsoluteFill style={{ width: project.width / 2, height: project.height / 2, overflow: "hidden" }}>
+    <div style={{ width: project.width, height: project.height, transform: "scale(0.5)", transformOrigin: "top left", position: "absolute" }}>
       <Episode {...project} />
     </div>
   </AbsoluteFill>

@@ -37,6 +37,7 @@ export type TxtEl = Base & {
   center: boolean;
   maxw: number | null;
   stroke?: boolean;
+  strikeT?: number;
 };
 export type ArEl = Base & {
   k: "ar";

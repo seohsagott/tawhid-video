@@ -270,6 +270,27 @@ export const ElementView: React.FC<{ el: El; t: number; n12: number }> = ({ el, 
     }
   }
 
+  /* ------------------------------------------------------ strike-through */
+  // A rose line wiping across the text over 0.3 s, at the middle of the cap height.
+  let strike: React.ReactNode = null;
+  if (el.k === "txt" && el.strikeT !== undefined && txtLay && t >= el.strikeT) {
+    const wFull = txtLay.wd + 20;
+    const wNow = Math.trunc(wFull * eo((t - el.strikeT) / 0.3));
+    if (wNow > 2) {
+      strike = (
+        <div
+          style={{
+            ...abs(bx - 10, by + el.size * 0.95 - el.size * 0.36),
+            width: wNow,
+            height: Math.max(3, Math.round(el.size * 0.11)),
+            background: "#B9797A",
+            borderRadius: 2,
+          }}
+        />
+      );
+    }
+  }
+
   /* ------------------------------------------------- front pass (particles) */
   // Card sparkles were baked as fractions of engine's padded sprite (+40 each side).
   const origin =
@@ -281,6 +302,7 @@ export const ElementView: React.FC<{ el: El; t: number; n12: number }> = ({ el, 
     <>
       {backPass}
       {node}
+      {strike}
       {el.parts ? <Particles parts={el.parts} t={t} origin={origin} /> : null}
     </>
   );
