@@ -210,9 +210,18 @@ GitHub Actions: **Actions → Render → Run workflow**.
 | `splice` | splice the range into an earlier full render |
 | `base_run_id` | the Render run holding that full MP4 |
 | `crf` | 18 is visually lossless, 23 is the usual default |
+| `image_format` | `png` (default) or `jpeg` frame capture before encoding — see below |
 | `remotion_version` | `latest` by default — CI has no macOS limit |
 
 The result is a downloadable artifact on the run page.
+
+**Frame capture: PNG by default.** Measured on the first chapter at CRF 18
+against lossless local stills: PNG capture was cleaner on every text region
+(e.g. card English 3.07 vs 3.40 mean error, Arabic 2.69 vs 3.08) and JPEG
+marginally cleaner on plain paper (1.36 vs 1.64) — a few percent either way,
+invisible at 3× zoom, because the h264 encode dominates both. PNG costs about
+40% more render time (199 s vs 141 s for the chapter). Typography is what this
+style lives on, so PNG is the default; pick `jpeg` for quick checks.
 
 **Why a small fix does not cost a whole re-export.** Every render is re-encoded
 once with a keyframe every second. A `range` render with `splice=true` snaps the

@@ -55,11 +55,11 @@ on:
         required: false
         default: ""
       image_format:
-        description: "Frame capture before encoding: png (lossless) or jpeg (Remotion default, q80)"
+        description: "Frame capture before encoding. png (lossless) is the default: measured cleaner on every text region; costs ~40% more render time. jpeg (q80) for quick checks."
         required: false
-        default: "jpeg"
+        default: "png"
         type: choice
-        options: [jpeg, png]
+        options: [png, jpeg]
 
 concurrency:
   group: render-${{ inputs.composition }}
